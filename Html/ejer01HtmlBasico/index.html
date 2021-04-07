@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Html elementos basicos (ejer01HtmlBasico)</title>
+  </head>
+  <body>
+    <h1>Primer parrafo corto (incluye el retorno de carro)</h1>
+    <h2>Segundo parrafo corto (incluye el retorno de carro)</h2>
+    <h2>Grupo de elementos de navegacion</h2>
+    <ul>
+      <li><a href="https://espanol.yahoo.com/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAALYcRYXsg9mJI6bSgk2IXC3BPm_cpUOj2TBqU5X7SAFMBQ3fewvGtTWZTjFmWZXwf7Bd-Qr_yt-ZBRWir2IZsKTpTRKFfdErbeyUeldY4HIAtsClRMYvHgz1EorZhcRA2ldAnSlIUxy5Cf-j0gahTdohmadwrfcIzgedQgG_PpdD">Yahoo</a></li>
+      <li><a href="https://www.google.com.ar/">Google</a></li>
+      <li><a href="https://www.youtube.com/">YouTube</a></li>
+    </ul>
+    <hr>
+    <a href="./paginanuevamismaventana/paginanuevamismaventana.html">Enlace a otra pagina dentro de la misma pestaña</a>&nbsp &nbsp
+    <a href="./paginanuevaotraventana/paginanuevaotraventana.html" target="_blank">Enlace a otra pagina en nueva pestaña </a>&nbsp &nbsp
+    <a href="#otrolugar">Ancla a otro punto de esta pagina</a><br><br>
+    <hr>
+    <h1>Cuerpo principal del contenido</h1>
+    <!parrafo separado en varios renglones para mayor facilidad de lectura del codigo...>
+    <p>La etiqueta main es en HTML5 una etiqueta semantica.
+      Esto quiere decir que tiene que ver con el significado de lo contenido dentro de ella.
+      Define el contenido principal de la pagina.
+      Unicamnete puede haber una sola etiqueta como esta en todo el documento.<br>
+      El contenido escrito aqui dentro no se repite en el resto del sitio
+      (todo lo contrario a los encabezdos de pagina, los menues de navegacion y los pie de pagina).
+      Es usado por buscadores para indexar.<br>
+      Conviene usar aqui textos que ayuden a encontrar la pagina luego de procesos de indexacion de los buscadores.
+    </p>
+    <h2>Seccion etiquetas semanticas mas importantes:</h2>
+    <ul>
+      <li>HEADER</li>
+      <li>FOOTER</li>
+      <li>SECTION</li>
+      <li>ARTICLE</li>
+      <li>NAV</li>
+      <li>ADDRESS</li>
+    </ul>
+    <p>Las etiquetas semanticas estructurales estan relacionadas directamente con el significado del contenido
+    y no con los estilos ni las posiciones dentro del documento.</p>
+    <h2>Reglas para etiquetas semanticas:</h2>
+    <ul>
+      <li>Los distintos tipos de contenido se pueden asociar a las etiquetas SECTION.</li>
+      <li>Las unidades de contenido se asocian a las etiquetas ARTICLE. O sea que un SECTION anida multiples ARTICLES.</li>
+      <li>Las etiquetas HEADER y FOOTER pueden ser anidadas dentro de otras
+       HEADER o FOOTER. Osea un FOOTER podria anidar otro HEADER y FOOTER.</li>
+       <li>La etiqueta NAV debe ser unica en el documento y corresponde a los elementos de navegacion del documento.</li>
+       <li>Reservar etiqueta h1 para usar dentro de etiquetas top level como main,header o footer.</li>
+    </ul>
+    <b>Section de imagenes</b>
+    <p>En esta seccion mostraremos imagenes identificativas de nuestro sitio. <br>
+    La siguiente imagen esta insertads en tamaño natural</p>
+    <img src="./XP144.jpg">
+    <p>La misma imagen, Fondo de Windows XP (256px x 144px), con distintos atributos width <br>
+      De acuerdo a la dimension de la imagen, solo la primera no pixeleara <br>
+      Cada elemento img se ubica al lado de la anterior hasta completar el ancho de la ventana activa (view port)
+    <br>Todas las siguientes imagenes se veran deformadas por haber definido doble parametro de estilo (ancho y alto)</p>
+    <img src="./XP144.jpg" style="width:64px;height:288px">
+    <img src="./XP144.jpg" style="width:128px;height:288px">
+    <img src="./XP144.jpg" style="width:256px;height:288px">
+    <img src="./XP144.jpg" style="width:512px;height:288px">
+    <img src="./XP144.jpg" style="width:768px;height:288px">
+    <hr>
+    <b>Section de video</b><br>
+    <video src="leftright.mp4" width="960" height="540" controls>
+    </video>
+    <h2>Anclajes</h2>
+    <a id="otrolugar">Punto de anclado</a>
+    <h1>Datos del alumno</h1>
+    <p>Joaquin Ignacio Tiesi <br>Legajo:26041</p>
+
+  </body>
+</html>
