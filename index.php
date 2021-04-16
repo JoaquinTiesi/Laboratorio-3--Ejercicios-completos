@@ -14,6 +14,7 @@
       <li><a href="./Php/index.html">Php</a></li>
       <li><a href="./Otros/index.html">Otros</a></li>
     </ul>
-
+    <br><br>
+    <p>Alumno: Joaquin Tiesi <br>Legajo: 26041 <br>DNI: 40785079</p>
   </body>
 </html>
