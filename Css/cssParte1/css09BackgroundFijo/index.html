@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" style="height:100%">
+  <head>
+    <meta charset="utf-8">
+    <title>css09BackgroundFijo</title>
+    <style media="screen">
+      div.foto{
+        margin-top: 7%;
+        margin-left:8%;
+        margin-right:10%;
+        width: 70%;
+        height: 80%;
+        box-sizing: border-box;
+        background-image: url('./fondo.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: black;
+        color: yellow;
+        overflow: scroll;
+        border-style: solid;
+        border-color:orange;
+        padding-left: 10%;
+        padding-right: 10%;
+        border-top-left-radius: 10%;
+        opacity: 0.5;
+      }
+      div.borde{
+        margin: auto;
+        width: 30%;
+        height: 60%;
+        background-color: lightblue;
+        border-style: solid;
+        border-color: gray;
+      }
+    </style>
+  </head>
+  <body style="height:100%">
+    <div class="borde">
+    <div class="foto">
+      <p>El padding es importante para que el texto no quede pegado al borde</p>
+      <p>No olvidar usar el box-sizing:border-box para que la dimension de la caja
+      sea exactamente la definida en el width</p>
+      <p>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+      texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+      texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+      texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+      texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+      texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+      texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto </p>
+
+    </div>
+    </div>
+
+    <br><br>
+    <a href="../../index.html">Volver a la pagina anterior.</a>
+  </body>
+</html>

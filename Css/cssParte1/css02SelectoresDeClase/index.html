@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>css02SelectoresDeClase</title>
+    <style media="screen">
+      p.claseacotacion{
+        text-align:center;
+        font-size:18px;
+        color:blue;
+        font-style:italic;
+        border-style:solid;
+        border-width:thin;
+        border-color:blue;
+      }
+      .ClaseDestacado{
+        font-weight: bold;
+      }
+      p.claseayuda{
+        text-align:center;
+        font-size:18px;
+        color:yellow;
+        font-style:italic;
+        border-style:solid;
+        border-width:thin;
+        border-color:yellow;
+        width:50%;
+      }
+      p.ClaseContenidoComun{
+        font-size:12px;
+      }
+      p#idUnico{
+        text-align:center;
+        font-size:12px;
+        color:red;
+        font-style:italic;
+        border-style:solid;
+        border-width:thin;
+        border-color:red;
+        width:30%;
+      }
+      img.imagenAl50{
+        max-width:50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>A partir de esta pagina no usaremos mas el atributo style en ninguna etiqueta.</h1>
+    <h1>Todo el estilo sera definido dentro de una etiqueta style, anidada en la etiqueta head del documento.</h1>
+    <h1>Todos los parrafos tienen un default como estilo que incluyen un margin-bottom para separarlos mas entre ellos.</h1>
+    <p>Este parrafo contiene un grupo de palabras delimitadas por una etiqueta "span".
+    El comienzo es aqui: <span class="ClaseDestacado">Grupo de palabras destacadas con el estilo ClaseDestacado</span></p>
+    <br>
+    <p class="claseacotacion">Este parrafo toma el estilo definido en la etiqueta style en el header del documento
+    como class="claseacotacion" kgjfgfkgfgfjkgfgkfgfkgfkfgkfkgfghkfghhfghkfgfghkfhgkfkgfkgfgkfkgfjgkfkfg hola profe
+    hkjhkjhkjhkjhkjkhjjghjghgjhghjghghghjgkjhjkghgjhghjgjhghjgjhgjhgjhghjgjhghjghjghghjgjhgjhgjkg</p>
+    <br>
+    <p class="ClaseDestacado">Este parrafo toma el estilo definido en la etiqueta style en el header del documento
+    como class="ClaseDestacado"</p>
+    <br>
+    <p class="claseayuda">Este parrafo toma el estilo definido en la etiqueta style en el header del
+    documento como class"claseayuda"</p>
+    <br>
+    <p class="ClaseContenidoComun">Este parrafo toma el estlo definido en la etiqueta style en el header
+    del documento como class"ClaseContenidoComun"</p>
+    <br>
+    <p id="idUnico">Parrafo formateado por un estilo particular definido en el style del documento
+    para un parrafo especifico id="idUnico"</p>
+    <br>
+    <h1>Todas las imagenes con class="imagenAl50" en esta pagina se encuentran al 50% del ancho del viewport
+    mas alla de su tamaño real en pixeles:</h1>
+    <img src="./XP.jpg" class="imagenAl50">
+
+    <br><br>
+    <a href="../../index.html">Volver a la pagina anterior.</a>
+  </body>
+</html>

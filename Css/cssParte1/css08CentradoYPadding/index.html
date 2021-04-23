@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>css08CentradoYPadding</title>
+    <style media="screen">
+      div.elementoCentrado{
+        margin: auto;
+        width: 50%;
+        background-color: lightblue;
+        text-align: left;
+      }
+      div.elementoPadding{
+        margin: auto;
+        width: 50%;
+        background-color: lightgreen;
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: left;
+        margin-top:-16px;
+        margin-bottom:-16px;
+
+      }
+      div.elementoBoxing{
+        margin: auto;
+        width: 50%;
+        background-color: lightyellow;
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: left;
+        box-sizing:border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Los siguientes elementos tienen un ancho del 50% de la ventana</h1>
+    <div class="elementoCentrado">
+      <p>Texto en el interior <br>Texto en el interior
+      <br>Texto en el interior<br>Texto en el interior
+      <br>Texto en el interior</p>
+    </div>
+    <div class="elementoPadding">
+      <p>Texto en interior con padding y sin box-sizing<br>
+      Texto en interior con padding y sin box-sizing<br>
+      Texto en interior con padding y sin box-sizing<br>
+      Texto en interior con padding y sin box-sizing<br>
+      Texto en interior con padding y sin box-sizing<br></p>
+    </div>
+    <div class="elementoBoxing">
+      <p>Texto en interior con padding y con box-sizing<br>
+      Texto en interior con padding y con box-sizing<br>
+      Texto en interior con padding y con box-sizing<br>
+      Texto en interior con padding y con box-sizing<br>
+      Texto en interior con padding y con box-sizing<br></p>
+    </div>
+
+    <br><br>
+    <a href="../../index.html">Volver a la pagina anterior.</a>
+  </body>
+</html>
