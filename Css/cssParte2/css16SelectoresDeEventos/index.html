@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" style="height:100%">
+  <head>
+    <meta charset="utf-8">
+    <title>css16SelectoresdeEventos</title>
+    <style media="screen">
+      div.fondo{
+        width: 80%;
+        background-color: lightblue;
+        margin: auto;
+        overflow: auto;
+      }
+      div.opcion a{
+        background-color: lightgray;
+        color: black;
+        border-style: solid;
+        border-color: blue;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        width: 80px;
+        height: 40px;
+      }
+
+      div.opcion:hover{
+        background-color: blue;
+        color: white;
+      }
+      div.opcion:active{
+        background-color: yellow;
+        color:black;
+      }
+      div.otrafila{
+        clear: both;
+        margin-bottom: 2%;
+      }
+      div.formulario{
+        margin: auto;
+        font-size: 1vw;
+        box-sizing: border-box;
+      }
+      div.imagen{
+        margin-top: 2%;
+        width: 100px;
+        height: 100px;
+        float: left;
+        border-style: solid;
+        border-color: black;
+        border-width: thin;
+      }
+      div.imagen:active{
+        width: 400px;
+        height: 400px;
+      }
+      img{
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .entrada:focus{
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body style="height:100%">
+    <div class="fondo">
+      <div class="opcion">
+        <a href="./respuesta1.html">Opcion 1</a>
+      </div>
+      <div class="opcion">
+        <a href="./respuesta2.html">Opcion 2</a>
+      </div>
+      <div class="opcion">
+        <a href="./respuesta3.html">Opcion 3</a>
+      </div>
+      <div class="otrafila">
+      </div>
+      <div class="formulario">
+        <form action="index.html" method="post" id="enviardata">
+          <label for="apellido">Apellido:</label><br>
+          <input type="text" name="apellido" value="" placeholder="Apellido" title="Ingrese su apellido aqui." class="entrada"><br>
+          <label for="nombre">Nombre</label><br>
+          <input type="text" name="nombre" value="" placeholder="Nombre" title="ingrese su nombre aqui" class="entrada">
+        </form>
+      </div>
+      <div class="imagen">
+        <img src="XP.jpg">
+      </div>
+      <div class="imagen">
+        <img src="1610.jpg">
+      </div>
+      <div class="imagen">
+        <img src="169.jpg">
+      </div>
+      <div class="imagen">
+        <img src="916.jpg">
+      </div>
+    </div>
+
+    <br><br>
+    <a href="../../index.html">Volver a la pagina anterior.</a>
+  </body>
+</html>

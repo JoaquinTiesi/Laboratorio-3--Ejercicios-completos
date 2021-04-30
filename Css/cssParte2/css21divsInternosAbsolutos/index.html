@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>css21divsInternosAbsolutos</title>
+    <style media="screen">
+    html, body{
+      height: 100%;
+    }
+    div.fondo{
+      position: relative;
+      width: 80%;
+      height: 100%;
+      background-color: lightblue;
+      margin: auto;
+    }
+    div.contenedorinterno1{
+      position: absolute;
+      top: 20%;
+      left: 0%;
+      width: 20%;
+      height: 40%;
+      overflow: auto;
+      font-size: 1vw;
+      z-index: 1;
+      background-color: lightgreen;
+      border-style: solid;
+      border-color: green;
+    }
+    div.contenedorinterno2{
+      position: absolute;
+      top: 40%;
+      right: 0%;
+      width: 45%;
+      height: 45%;
+      overflow: auto;
+      font-size: 1vw;
+      z-index: 2;
+      background-color: lightyellow;
+    }
+    div.contenedorinterno3{
+      position: absolute;
+      top: 10%;
+      left: 45%;
+      width: 30%;
+      height: 50%;
+      overflow: auto;
+      font-size: 1vw;
+      z-index: 3;
+      background-color: lightgray;
+      opacity: 0.5;
+    }
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      width: 25%;
+      margin: 1%;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+      <h2>Estructura de posicionamiento absoluto pero
+      adaptable a la resolucion de pantalla.</h2>
+      <div class="contenedorinterno3">
+        <h1>Contenedor interno 3.</h1>
+        <p>asssa f ffaaffa fdsvdsvdv sdsfdfdwfwe fwfewfewff fefweffw
+        bvfhdskvbkhsbvdsv dddf fddfdwf rfrwfewfew ferfregr
+        sdfsgefdvefv ssreg</p>
+      </div>
+      <div class="contenedorinterno1">
+        <h1>Contenedor interno 1.</h1>
+        <p>asff asdff sasdff sssdfd assdf aadf sasdf asdff ssdff ssdffg dsssffs sdfdss
+        asdff d asdff s asdff sadff dssdf sasfg dssasdfg fdsa sdf gfds asd f ds asd fdsa sd </p>
+      </div>
+      <div class="contenedorinterno2">
+        <h1>Contenedor interno 2</h1>
+        <img src="916.jpg" alt="">
+        <img src="916.jpg" alt="">
+        <img src="916.jpg" alt="">
+      </div>
+    </div>
+
+    <br><br>
+    <a href="../../index.html">Volver a la pagina anterior.</a>
+  </body>
+</html>
