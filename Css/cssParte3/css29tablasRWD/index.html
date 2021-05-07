@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>css29tablasRWD</title>
+    <style media="screen">
+    html,body{
+      width:100%;
+      height:100%;
+      margin:0%;
+    }
+    div.fondo{
+      width: 100%;
+      height: 100%;
+      background-color: lightblue;
+    }
+    div.anterior{
+      background-color:lightblue;
+      margin:auto;
+      box-sizing:border-box;
+      float:left;
+    }
+    img{
+      max-width:100%;
+      max-height:100%;
+      width:360px;
+    }
+    header{
+      width: 100%;
+      height: 10%;
+      text-align: center;
+      background-color: lightblue;
+      padding-top: 2%;
+    }
+    table{
+      border-collapse: collapse;
+      margin-top: 0%;
+      width: 100%;
+      overflow: auto;
+      border-style: solid;
+      border-width: thin;
+      border-color: black;
+    }
+    thead tr{
+      background-color: lightyellow;
+      color: gray;
+      height: 40px;
+    }
+    tbody{
+      background-color: lightblue;
+      overflow: auto;
+      overflow-x: hidden;
+      display: block;
+      height: 160px;
+    }
+    thead, tbody tr{
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+    @media(max-width:1200px){
+      [campo-dato:'Skpe']{display: none;}
+    }
+    tbody tr:nth-child(odd){
+      background:rgba(0,0,0,.2)
+    }
+    tbody tr{
+      color:black;
+      font-style: arial;
+      text-align: center;
+      height: 50px;
+    }
+    footer{
+      height: 10%;
+      width: 100%;
+      text-align: left;
+      background-color: lightblue;
+      padding-top: 2%;
+    }
+    h1{
+      text-align: center;
+      margin: 0%;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+    <header>
+      <h1>RWD (Responsive Web Design) TABLE:Thead fijo y Tbody scroleable</h1>
+    </header>
+    <div class="scroll scrolly">
+    <table>
+    <thead>
+      <tr>
+        <th campo-dato="id">Id</th>
+        <th campo-dato="nick">Nick</th>
+        <th campo-dato="mail">Mail</th>
+        <th campo-dato="web">web</th>
+        <th campo-dato="witter">Twitter</th>
+        <th campo-dato="skype">Skype</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td campo-dato="id">1</th>
+        <td campo-dato="nick">Fu</th>
+        <td campo-dato="mail">fulano@gmail.com</th>
+        <td campo-dato="web">http://fulano.com</th>
+        <td campo-dato="twitter">@fulano</th>
+        <td campo-dato="skype">fulano@gmail.com</th>
+      </tr>
+      <tr>
+        <td campo-dato="id">2</td>
+        <td campo-dato="nick">Menga</td>
+        <td canpo-dato="mail">mengano@gmail.com</td>
+        <td campo-dato="web">http://mengano.com</td>
+        <td campo-dato="twitter">@mengano</td>
+        <td campo-dato="skype">mengano@gmail.com</td>
+      </tr>
+      <tr>
+        <td campo-dato="id">3</td>
+        <td campo-dato="nick">Coma</td>
+        <td canpo-dato="mail">comano@gmail.com</td>
+        <td campo-dato="web">http://comano.com</td>
+        <td campo-dato="twitter">@comano</td>
+        <td campo-dato="skype">comano@gmail.com</td>
+      </tr>
+      <tr>
+        <td campo-dato="id"></td>
+        <td campo-dato="nick"></td>
+        <td canpo-dato="mail">@gmail.com</td>
+        <td campo-dato="web">http://.com</td>
+        <td campo-dato="twitter">@</td>
+        <td campo-dato="skype">@gmail.com</td>
+      </tr>
+      <tr>
+        <td campo-dato="id"></td>
+        <td campo-dato="nick"></td>
+        <td canpo-dato="mail">@gmail.com</td>
+        <td campo-dato="web">http://.com</td>
+        <td campo-dato="twitter">@</td>
+        <td campo-dato="skype">@gmail.com</td>
+      </tr>
+      <tr>
+        <td campo-dato="id"></td>
+        <td campo-dato="nick"></td>
+        <td canpo-dato="mail">@gmail.com</td>
+        <td campo-dato="web">http://.com</td>
+        <td campo-dato="twitter">@</td>
+        <td campo-dato="skype">@gmail.com</td>
+      </tr>
+      <tr>
+        <td campo-dato="id"></td>
+        <td campo-dato="nick"></td>
+        <td canpo-dato="mail">@gmail.com</td>
+        <td campo-dato="web">http://.com</td>
+        <td campo-dato="twitter">@</td>
+        <td campo-dato="skype">@gmail.com</td>
+      </tr>
+      <tr>
+        <td campo-dato="id"></td>
+        <td campo-dato="nick"></td>
+        <td canpo-dato="mail">@gmail.com</td>
+        <td campo-dato="web">http://.com</td>
+        <td campo-dato="twitter">@</td>
+        <td campo-dato="skype">@gmail.com</td>
+      </tr>
+      <tr>
+        <td campo-dato="id"></td>
+        <td campo-dato="nick"></td>
+        <td canpo-dato="mail">@gmail.com</td>
+        <td campo-dato="web">http://.com</td>
+        <td campo-dato="twitter">@</td>
+        <td campo-dato="skype">@gmail.com</td>
+      </tr>
+      <tr>
+        <td campo-dato="id"></td>
+        <td campo-dato="nick"></td>
+        <td canpo-dato="mail">@gmail.com</td>
+        <td campo-dato="web">http://.com</td>
+        <td campo-dato="twitter">@</td>
+        <td campo-dato="skype">@gmail.com</td>
+      </tr>
+      <tr>
+        <td campo-dato="id"></td>
+        <td campo-dato="nick"></td>
+        <td canpo-dato="mail">@gmail.com</td>
+        <td campo-dato="web">http://.com</td>
+        <td campo-dato="twitter">@</td>
+        <td campo-dato="skype">@gmail.com</td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
+    <br><br>
+    <div class="anterior">
+      <a href="../../index.html">Volver a la pagina anterior.</a>
+      </div>
+  </body>
+</html>

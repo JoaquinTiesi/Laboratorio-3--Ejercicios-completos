@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>css36layoutResponsivo</title>
+    <style media="screen">
+    html,body{
+      width:100%;
+      height:100%;
+      margin:0%;
+      overflow: hidden;
+    }
+    div.fondo{
+      width: 100%;
+      height: 100%;
+      background-color: lightblue;
+    }
+    div.anterior{
+      background-color:lightblue;
+      margin:auto;
+      box-sizing:border-box;
+      float:left;
+    }
+    img{
+      max-width:100%;
+      max-height:100%;
+      width:80%;
+      height: 80%;
+      opacity: 0.5;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #header{
+      background-color: darkorange;
+      font-size: 2vw;
+      font-weight: bold;
+      text-align: center;
+      align-items: center;
+      vertical-align: middle;
+      line-height: 250%;
+      width: 90%;
+      height: 10%;
+      margin: auto;
+      padding: 0%;
+    }
+    #footer{
+      width: 90%;
+      height: 10%;
+      margin: auto;
+      background-color: darkorange;
+      font-size: 2vw;
+      font-weight: bold;
+      text-align: center;
+      padding: 0%;
+    }
+    .contB{
+      width: 90%;
+      height: 74.5%;
+      margin: auto;
+      padding: 0%;
+      overflow: auto;
+      background-color: coral;
+    }
+    .text{
+      width: 20%;
+      height: auto;
+      float: left;
+      background-color: lightgray;
+    }
+    #menu ul{
+      width: 90%;
+      list-style: none;
+      margin: 0 auto;
+      padding: 0%;
+
+    }
+    #menu ul li a{
+      width: 25%;
+      height: 40px;
+      background-color: orange;
+      color: black;
+      text-align: center;
+      padding-top: 15px;
+      float: left;
+    }
+    #menu ul a{
+      display: block;
+      text-decoration: none;
+    }
+    #menu ul li:hover ul{
+      display: block;
+    }
+    #menu ul li a:hover{
+      background-color: gray;
+      color: black;
+    }
+    @media (min-width:100px) and (max-width:900px){
+      .text{
+        width: 50%;
+      }
+      #menu ul{
+        width: 100%;
+      }
+      #menu ul li a{
+        position: relative;
+        width: 100%
+      }
+      #header{
+        width: 100%;
+      }
+      .contB{
+        width: 100%;
+        height: 51%;
+      }
+      #footer{
+        width: 100%;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      Titulo principal de la pagina
+    </div>
+    <nav id="menu">
+      <ul>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JSCRIPT</a></li>
+        <li><a href="#">PHP</a></li>
+      </ul>
+    </nav>
+    <div class="contB">
+      <div class="text">
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        <br><br>
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+      </div>
+      <div class="text">
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        <img src="notre.jpg" style="transform:rotatez(10deg)">
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+      </div>
+      <div class="text">
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        <br><br>
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as ddasdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+
+      </div>
+      <div class="text">
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        <br><br>
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as ddasdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+      </div>
+      <div class="text">
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        asdf aasd saad df saa sd dffsa ad f fd saa as d f dsaa sdffd saa sdfd ss a as dd
+        <img src="estatua.png" style="transform:translate(-50%)">
+      </div>
+    </div>
+    <div id="footer">
+      Pie de pagina
+      <br>
+      <div class="anterior">
+        <a href="../../index.html">Volver a la pagina anterior.</a>
+        </div>
+    </div>
+  </body>
+</html>

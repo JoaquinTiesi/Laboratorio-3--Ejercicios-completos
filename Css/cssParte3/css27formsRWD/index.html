@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>css27formsRWD</title>
+    <style media="screen">
+    html,body{
+      width:100%;
+      height:100%;
+      margin:0%;
+      padding: 0%;
+    }
+    div.anterior{
+      background-color:lightblue;
+      margin:auto;
+      box-sizing:border-box;
+      float:left;
+    }
+    img{
+      max-width:100%;
+      max-height:100%;
+      width:360px;
+    }
+    div.fondo{
+      width: 100%;
+      height: 100%;
+      background-color: lightblue;
+      overflow: auto;
+      box-sizing: border-box;
+    }
+    label{
+      display: block;
+      font-size: .8vw;
+    }
+    p{
+      font-size: .8vw;
+    }
+    .boton input{
+      height: 50px;
+      background-color: lightgray;
+      cursor: pointer;
+    }
+    form{
+      height: 70%;
+      overflow: auto;
+      box-sizing: border-box;
+      background-color: lightgray;
+      overflow: scroll;
+    }
+    div.barracontrol{
+      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 10%;
+      background-color: gray;
+    }
+    div.pregunta{
+      height: 160px;
+      background-color: lightgray;
+      border-style: solid;
+      border-color: black;
+      float: left;
+      padding: 1%;
+      border-width: thin;
+      text-align: left;
+      overflow: hidden;
+    }
+    @media (min-width:1000px){
+      .pregunta{
+        width: 17.5%;
+      }
+    }
+    @media (max-width:999px) and (min-width:100px){
+      .pregunta{
+        width: 22%;
+      }
+    }
+    h1{
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+      <h1>Formulario</h1>
+      <form action="respuesta.html" method="get" target="_blank">
+        <div class="pregunta">
+          <label for="apellido">1.Apellido:</label>
+          <input type="text" name="apellido" value="">
+        </div>
+        <div class="pregunta">
+          <label for="nombre">2.Nombre</label>
+          <input type="text" name="nombre" value="">
+        </div>
+        <div class="pregunta">
+          <label for="contra">3.Contraseña</label>
+          <input type="text" name="contra" value="">
+        </div>
+        <div class="pregunta">
+          <label for="desa">4.Campo Deshabilitado</label>
+          <input type="text" disabled name="desa" value="Valor Deshabilitado">
+        </div>
+        <div class="pregunta">
+          <label for="fecha">5.Fecha y Hora</label>
+          <input type="datetime-local" name="fecha" value="">
+        </div>
+        <div class="pregunta">
+          <label for="dni">6.DNI</label>
+          <input type="number" name="dni" value="">
+        </div>
+        <div class="pregunta">
+          <label for="">7.Actividades extracurriculares</label>
+          <label for="mus">Musica:</label>
+          <input type="checkbox" name="mus" value="si">
+          <label for="pint">Pintura Artistica</label>
+          <input type="checkbox" name="pint" value="si">
+          <label for="dep">Deportes</label>
+          <input type="checkbox" name="dep" value="si">
+          <label for="teat">Teatro</label>
+          <input type="checkbox" name="teat" value="">
+        </div>
+        <div class="pregunta">
+          <label for="sexo">8.Sexo</label>
+          <p>Masculino:</p>
+          <input type="radio" name="sexo" value="m" checked="checked">
+          <p>Femenino:</p>
+          <input type="radio" name="sexo" value="f">
+        </div>
+        <div class="pregunta">
+          <h2>9.Vacio</h2>
+        </div>
+        <div class="pregunta">
+          <label for="estudios">10.Estudios cursados:</label>
+          <select id="estudios" name="estudios">
+            <option value="pri" selected="selected">Primarios</option>
+            <option value="sec">Secundarios</option>
+            <option value="ter">Terciarios</option>
+            <option value="uni">Universitarios</option>
+            <option value="pos">Posgrado</option>
+          </select>
+        </div>
+        <div class="pregunta">
+          <label for="area">11.Area de desempeño:</label>
+          <select id="area" name="estudios">
+            <option value="admi">Administracion</option>
+            <option value="ven">Ventas</option>
+            <option value="fab">Fabrica</option>
+          </select>
+        </div>
+        <div class="pregunta">
+          <label for="turno">12.Turno:</label>
+          <select id="turno" name="turno">
+            <option value="man">Mañana</option>
+            <option value="tar">Tarde</option>
+            <option value="noc">Noche</option>
+          </select>
+        </div>
+        <div class="pregunta">
+          <label for="auto">13.Conduce:</label>
+          <input type="radio" name="auto" value="si">"Si"
+          <input type="radio" name="auto" value="no">"No"
+        </div>
+        <div class="barracontrol">
+          <div class="boton">
+            <input type="submit" name="enviar" value="Enviar">
+            <input type="reset" name="reset" value="Reset">
+          </div>
+        </div>
+      </form>
+      <h2>Pie del formulario</h2>
+      <div class="anterior">
+        <a href="../../index.html">Volver a la pagina anterior.</a>
+      </div>
+    </div>
+  </body>
+</html>
