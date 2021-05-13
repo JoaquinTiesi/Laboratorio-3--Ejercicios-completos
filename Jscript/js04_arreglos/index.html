@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js04_arreglos</title>
+    <style media="screen">
+      html,body{
+        width:100%;
+        height:100%;
+        margin:0%;
+        overflow: hidden;
+      }
+      div.fondo{
+        width: 100%;
+        height: 100%;
+        background-color: lightblue;
+      }
+      div.anterior{
+        background-color:lightblue;
+        margin:auto;
+        box-sizing:border-box;
+        float:left;
+      }
+      img{
+        max-width:100%;
+        max-height:100%;
+        width:80%;
+        height: 80%;
+        opacity: 0.5;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Variables Multidimensionales</h1>
+    <h2>Array de indice numerico</h2>
+    <script type="text/javascript">
+      var arregloFrutas=[];
+      arregloFrutas=["banana","manzana"];
+      arregloFrutas.push(prompt("Ingrese una tercer fruta en el arreglo:"));
+      document.write("<H4>Tipo para arregloFrutas: " +typeof arregloFrutas+ "</H4>");
+      document.write("<H4>Primer elemento cargado desde rograma: " +arregloFrutas[0]+ "</H4>");
+      document.write("<H4>Segundo elemento cargado desde rograma: " +arregloFrutas[1]+ "</H4>");
+      document.write("<H4>Tercer elemento cargado desde teclado: " +arregloFrutas[2]+ "</H4>");
+    </script>
+    <br><br>
+    <div class="anterior">
+      <a href="../index.html">Volver a la pagina anterior.</a>
+      </div>
+  </body>
+</html>

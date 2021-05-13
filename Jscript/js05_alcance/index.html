@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js05_alcance</title>
+    <style media="screen">
+      html,body{
+        width:100%;
+        height:100%;
+        margin:0%;
+        overflow: hidden;
+      }
+      div.fondo{
+        width: 100%;
+        height: 100%;
+        background-color: lightblue;
+      }
+      div.anterior{
+        background-color:lightblue;
+        margin:auto;
+        box-sizing:border-box;
+        float:left;
+      }
+      img{
+        max-width:100%;
+        max-height:100%;
+        width:80%;
+        height: 80%;
+        opacity: 0.5;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      button{
+        float: left;
+        text-align: center;
+        width: 30%;
+        margin-left: 2%;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="en1" title="Inicializa variable global desde adentro de una funcion con declaracion var">Inicializacion incorrecta</button>
+    <button type="button" id="en2" name="button" title="inicializa variable global desde adentro de una funcion sin declaracion var">Inicializacion correcta</button>
+    <button type="button" id="var" name="button" title="Muestra la variable global ingresada anteriormente">Muestra variable global</button>
+    <script type="text/javascript">
+      var entrada1;
+      document.getElementById("en1").onclick=function(){
+        var entrada1;
+        entrada1=prompt("Ingrese valor para la variable local");
+        alert("El valor de la variable local ingresada es: " +entrada1);
+        alert("El tipo de la variable local ingresada es: " +typeof entrada1);
+      }
+      document.getElementById("en2").onclick=function(){
+        entrada1=prompt("Ingrese valor para la variable local");
+        alert("El valor de la variable global ingresada es: " +entrada1);
+        alert("El tipo de la variable global ingresada es: " +typeof entrada1);
+      }
+      document.getElementById("var").onclick=function(){
+        alert("El valor de la variable global ingresada es: " +entrada1);
+        alert("El tipo de la variable global ingresada es: " +typeof entrada1);
+      }
+    </script>
+    <br><br>
+    <div class="anterior">
+      <a href="../index.html">Volver a la pagina anterior.</a>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js7_funcionesCompartidas</title>
+    <style media="screen">
+      html,body{
+        width:100%;
+        height:100%;
+        margin:0%;
+        padding: 0%;
+        overflow: hidden;
+      }
+      div.fondo{
+        width: 50%;
+        height: 50%;
+        margin: auto;
+        padding: 0%;
+        background-color: lightgray;
+        display: flex;
+      }
+      div.caja{
+        width: 90%;
+        height: 90%;
+        margin: auto;
+        align-items: center;
+        background-color: lightblue;
+      }
+      div.caja2{
+        width: 90%;
+        height: 40%;
+        margin: auto;
+        align-items: center;
+        padding-left: 3%;
+      }
+      div.caja3{
+        width: 90%;
+        height: 40%;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+      }
+      div.anterior{
+        background-color:lightblue;
+        margin:auto;
+        box-sizing:border-box;
+        float:left;
+      }
+      img{
+        max-width:100%;
+        max-height:100%;
+        width:80%;
+        height: 80%;
+        opacity: 0.5;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      button{
+        width: 28%;
+        height: 15%;
+        float: left;
+        margin-left: 3%;
+        margin-top: 3%;
+      }
+      button.selec{
+        width: 45%;
+        height: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <br><br>
+    <div class="fondo">
+      <div class="caja">
+        <input type="text" id="pantalla" style="width:99%; height:5%; text-align:right;">
+        <div class="caja2">
+          <button type="button" id="1">1</button>
+          <button type="button" id="2">2</button>
+          <button type="button" id="3">3</button>
+          <button type="button" id="4">4</button>
+          <button type="button" id="5">5</button>
+          <button type="button" id="6">6</button>
+          <button type="button" id="7">7</button>
+          <button type="button" id="8">8</button>
+          <button type="button" id="9">9</button>
+        </div>
+        <div class="caja3">
+          <button type="button" id="suma" class="selec" name="button">+</button>
+          <button type="button" id="muestra" class="selec" name="button">Muestra Acumulador</button>
+          <button type="button" id="borraA" class="selec" name="button">Borra Acumulador</button>
+          <button type="button" id="borraD" class="selec" name="button">Borra display</button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var acumulador=0;
+      document.getElementById("1").onclick= function(){
+        document.getElementById("pantalla").value =
+          document.getElementById("pantalla").value + 1;
+      }
+      document.getElementById("2").onclick= function(){
+        document.getElementById("pantalla").value =
+          document.getElementById("pantalla").value + 2;
+      }
+      document.getElementById("3").onclick= function(){
+        document.getElementById("pantalla").value =
+          document.getElementById("pantalla").value + 3;
+      }
+      document.getElementById("4").onclick= function(){
+        document.getElementById("pantalla").value =
+          document.getElementById("pantalla").value + 4;
+      }
+      document.getElementById("5").onclick= function(){
+        document.getElementById("pantalla").value =
+          document.getElementById("pantalla").value + 5;
+      }
+      document.getElementById("6").onclick= function(){
+        document.getElementById("pantalla").value =
+          document.getElementById("pantalla").value + 6;
+      }
+      document.getElementById("7").onclick= function(){
+        document.getElementById("pantalla").value =
+          document.getElementById("pantalla").value + 7;
+      }
+      document.getElementById("8").onclick= function(){
+        document.getElementById("pantalla").value =
+          document.getElementById("pantalla").value + 8;
+      }
+      document.getElementById("9").onclick= function(){
+        document.getElementById("pantalla").value =
+          document.getElementById("pantalla").value + 9;
+      }
+      document.getElementById("suma").onclick= function(){
+        acumulador=acumulador + parseInt(document.getElementById("pantalla").value);
+        document.getElementById("pantalla").value = null;
+      }
+      document.getElementById("muestra").onclick= function(){
+        alert("Acumulado: " + acumulador);
+      }
+      document.getElementById("borraA").onclick= function(){
+        document.getElementById("pantalla").value = null;
+        acumulador = 0;
+      }
+      document.getElementById("borraD").onclick= function(){
+        document.getElementById("pantalla").value = null;
+      }
+    </script>
+    <br><br>
+    <div class="anterior">
+      <a href="../index.html">Volver a la pagina anterior.</a>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js08_operaciones_entre_inputs</title>
+    <style media="screen">
+      html,body{
+        width:100%;
+        height:100%;
+        margin:0%;
+        overflow: hidden;
+      }
+      div.fondo{
+        width: 100%;
+        height: 100%;
+        background-color: lightblue;
+        align-items: center;
+        text-align: center;
+        overflow: auto;
+      }
+      div.caja{
+        width: 80%;
+        height: 70%;
+        margin: auto;
+        align-items: center;
+        text-align: center;
+        background-color: lightgreen;
+        border: solid;
+        border-width: thick;
+        border-radius: 5%;
+        border-color: red;
+
+      }
+      div.anterior{
+        background-color:lightblue;
+        margin:auto;
+        box-sizing:border-box;
+        float:right;
+        border: solid;
+        border-color: red;
+      }
+      img{
+        max-width:100%;
+        max-height:100%;
+        width:80%;
+        height: 80%;
+        opacity: 0.5;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h1{
+        color: orange;
+        border: solid;
+        border-style: double;
+        border-radius: 20%;
+        box-sizing: border-box;
+
+      }
+      p{
+        font-size: 1.5vw;
+        color: red;
+      }
+      input{
+        width: 30%;
+        height: 2.5%;
+        text-align: right;
+      }
+      button{
+        width: 20%;
+        height: 5%;
+        background-color: lightgray;
+        border: solid;
+        border-width: medium;
+        border-radius: 5%;
+        border-color: red;
+      }
+      button:hover{
+        background-color: lightblue;
+      }
+      button:active{
+        background-color: lightyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+      <h1>Introducir un valor en los cuadros de texto y luego pulsar el boton para ejecutar la funcion correspondiente</h1>
+      <div class="caja">
+        <p>Entrada 1: </p>
+        <input type="text" id="e1" name="" value="" placeholder="0">
+        <p>Entrada 2: </p>
+        <input type="text" id="e2" name="" value="" placeholder="0">
+        <p>Entrada 3: </p>
+        <input type="text" id="e3" name="" value="" placeholder="0">
+        <p>Resultado:</p>
+        <input type="text" id="res" name="" value="" placeholder="0">
+        <br><br><br><br>
+        <button type="button" id="suma" name="button">Suma</button>
+        <button type="button" id="promedio" name="button">Promedio</button>
+        <button type="button" id="mayor" name="button">Mayor</button>
+        <br><br><br><br>
+        <div class="anterior">
+          <a href="../index.html">Volver a la pagina anterior.</a>
+          </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      document.getElementById("suma").onclick = function(){
+        document.getElementById("res").value = parseInt(document.getElementById("e1").value) +
+        parseInt(document.getElementById("e2").value) + parseInt(document.getElementById("e3").value);
+      }
+      document.getElementById("promedio").onclick = function(){
+        document.getElementById("res").value = (parseInt(document.getElementById("e1").value) +
+        parseInt(document.getElementById("e2").value) + parseInt(document.getElementById("e3").value))/3;
+      }
+      document.getElementById("mayor").onclick = function(){
+        if (parseInt(document.getElementById("e1").value)>parseInt(document.getElementById("e2").value) &&
+            parseInt(document.getElementById("e1").value)>parseInt(document.getElementById("e3").value)) {
+              document.getElementById("res").value = parseInt(document.getElementById("e1").value)
+        } else if (parseInt(document.getElementById("e2").value)>parseInt(document.getElementById("e1").value) &&
+            parseInt(document.getElementById("e2").value)>parseInt(document.getElementById("e3").value)) {
+              document.getElementById("res").value = parseInt(document.getElementById("e2").value)
+        } else if (parseInt(document.getElementById("e3").value)>parseInt(document.getElementById("e1").value) &&
+            parseInt(document.getElementById("e3").value)>parseInt(document.getElementById("e2").value)) {
+              document.getElementById("res").value = parseInt(document.getElementById("e3").value)
+        } else {
+          document.getElementById("res").value = 0;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Js02_comando_en_evento</title>
+    <style media="screen">
+      html,body{
+        width:100%;
+        height:100%;
+        margin:0%;
+        overflow: hidden;
+      }
+      div.fondo{
+        width: 100%;
+        height: 100%;
+        background-color: lightblue;
+      }
+      div.anterior{
+        background-color:lightblue;
+        margin:auto;
+        box-sizing:border-box;
+        float:left;
+      }
+      img{
+        max-width:100%;
+        max-height:100%;
+        width:80%;
+        height: 80%;
+        opacity: 0.5;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejercicio JS02_comando_en_evento</h1>
+    <button type="button" name="button" onClick="alert('mensaje de alerta')">Click aqui para ejecutar un alert</button>
+    <button type="button" name="button" onclick="document.write('<h1>Hola. Esta escritura pisa lo anterior</h1>')">Click aqui para ejecutar un document.write</button>
+    <br><br>
+    <div class="anterior">
+      <a href="../index.html">Volver a la pagina anterior.</a>
+      </div>
+  </body>
+</html>
