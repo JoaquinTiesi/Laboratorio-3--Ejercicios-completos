@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js24_validacion</title>
+    <style media="screen">
+    html,body{
+      width:100%;
+      height:100%;
+      margin:0%;
+      overflow: hidden;
+    }
+    div.fondo{
+      width: 100%;
+      height: 100%;
+      background-color: lightblue;
+      align-items: center;
+      text-align: center;
+      overflow: auto;
+    }
+    div.caja{
+      width: 70%;
+      height: 50%;
+      margin: auto;
+      align-items: left;
+      text-align: left;
+      background-color: lightgreen;
+      border: solid;
+      border-width: thick;
+      border-radius: 1%;
+      border-color: red;
+
+    }
+    div.anterior{
+      background-color:lightblue;
+      margin:auto;
+      box-sizing:border-box;
+      float:right;
+      border: solid;
+      border-color: red;
+      font-size: 2vw;
+    }
+    img{
+      max-width:100%;
+      max-height:100%;
+      width:80%;
+      height: 80%;
+      opacity: 0.5;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1{
+      color: black;
+      font-size: 2vw;
+
+    }
+    p{
+      font-size: 3vw;
+      color: red;
+    }
+    input{
+      width: 30%;
+      height: 10%;
+      text-align: left;
+      font-size: 2vw;
+    }
+    </style>
+  </head>
+  <body><div class="fondo">
+    <div class="caja">
+      <h1>Ejer validacion de un INPUT</h1>
+      <form class="" id="formulario" action="index.html" method="get">
+        Ingrese el dia del mes:<br> <input type="number" onkeyup="validard()" id="dia" min="1" max="31"><br>
+        Ingrese el mes:<br> <input type="number" onkeyup="validarm()" id="mes" min="1" max="12"><br><br>
+        <input type="button" onclick="limpiar()" name="" value="Reset" style="width:20%;text-align:center">
+        <input type="button" onclick="enviar()" name="" id="env" value="Enviar" style="width:20%;text-align:center">
+      </form>
+      <br><br>
+      <div class="anterior">
+        <a href="../index.html">Volver a la pagina anterior.</a>
+        </div>
+    </div>
+  </div>
+      <script type="text/javascript">
+      function validard(){
+        if (!document.getElementById("dia").checkValidity()) {
+          alert("El valor introducido no es correcto");
+          document.getElementById("env").disabled=true;
+        }
+        else {
+          document.getElementById("env").disabled=false;
+        }
+      }
+      function validarm(){
+        if (!document.getElementById("mes").checkValidity()) {
+          alert("El valor introducido no es correcto");
+          document.getElementById("env").disabled=true;
+        }
+        else {
+          document.getElementById("env").disabled=false;
+        }
+      }
+      function enviar(){
+        if (confirm("Esta seguro de enviar?")==true) {
+          document.getElementById("formulario").action="./respuestaformulario.html";
+          document.getElementById("formulario").submit();
+        }
+        }
+        function limpiar(){
+          document.getElementById("formulario").reset();
+          document.getElementById("env").disabled=false;
+        }
+      </script>
+  </body>
+</html>

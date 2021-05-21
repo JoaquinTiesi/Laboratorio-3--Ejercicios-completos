@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js29_location</title>
+    <style media="screen">
+      html,body{
+        width:100%;
+        height:100%;
+        margin:0%;
+        overflow: hidden;
+      }
+      div.fondo{
+        width: 100%;
+        height: 100%;
+        background-color: lightblue;
+      }
+      div.anterior{
+        background-color:lightblue;
+        margin:auto;
+        box-sizing:border-box;
+        float:left;
+      }
+      img{
+        max-width:100%;
+        max-height:100%;
+        width:80%;
+        height: 80%;
+        opacity: 0.5;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" onclick="you()" value="YouTube">
+    <input type="button" onclick="source()" value="Source Forge">
+    <input type="button" onclick="mail()" value="Gmail">
+    <br><br><br><br>
+    <div class="anterior">
+      <a href="../index.html">Volver a la pagina anterior.</a>
+      </div>
+      <script type="text/javascript">
+      function you(){
+        location.href="https://www.youtube.com/";
+      }
+      function source(){
+        location.href="https://sourceforge.net/";
+      }
+      function mail(){
+        location.href="https://mail.google.com/";
+      }
+      </script>
+  </body>
+</html>

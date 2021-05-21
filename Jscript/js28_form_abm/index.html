@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js28_form_abm</title>
+    <style media="screen">
+    html,body{
+      width:100%;
+      height:100%;
+      margin:0%;
+      overflow: auto;
+    }
+    div.fondo{
+      width: 100%;
+      height: 100%;
+      background-color: lightblue;
+      align-items: center;
+      text-align: center;
+      overflow: auto;
+      color: gray;
+    }
+    div.contenedormodal{
+      position: fixed;
+      width: 60%;
+      height: 50%;
+      top: 20%;
+      left: 10%;
+      overflow: auto;
+      visibility: visible;
+      z-index: 10;
+      background-color: blue;
+      color: black;
+      align-items: left;
+      text-align: left;
+      border-radius: 5%;
+    }
+    div.caja{
+      width: 50%;
+      height: 60%;
+      margin: auto;
+      align-items: left;
+      text-align: left;
+      background-color: lightgreen;
+      border: solid;
+      border-width: thick;
+      border-radius: 5%;
+      border-color: red;
+    }
+    div.anterior{
+      background-color:lightblue;
+      margin:auto;
+      box-sizing:border-box;
+      float:right;
+      border: solid;
+      border-color: red;
+      font-size: 1vw;
+    }
+    img{
+      max-width:100%;
+      max-height:100%;
+      width:80%;
+      height: 80%;
+      opacity: 0.5;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1{
+      color: black;
+      font-size: 1.5vw;
+      text-align: center;
+
+    }
+    p{
+      font-size: 3vw;
+      color: red;
+    }
+    input{
+      width: 50%;
+      height: 10%;
+      text-align: left;
+      font-size: 1vw;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwkgcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      gcavcjdvjavjcdvcasvjcvjvcdvchkcvckhvchkvckhvckhvkhacvckhcsdvwadcdcdfagragavavd gjvqejvechkeckhewckhq HK EKHEBDHKWQBDKEBCKEBJLWBDJBHKBKhbkbckbwkcbewkcbwhkcbwkcbwkcbewkcbkwbdwkcbwcukbewkbwk
+      <div class="contenedormodal">
+        <div class="caja">
+          <h1>FORMULARIO ABM</h1>
+          <form class="" id="formulario" action="index.html" method="get">
+
+            Nombre:<br> <input type="text" id="nombre" onkeypress="activar()" value=""><br>
+            Apellido:<br> <input type="text" id="Apellido" onkeypress="activar()" value=""><br>
+            Saldo:<br> <input type="number" id="saldo" onkeyup="validars()" min="1"  value=""><br><br>
+            <input type="button" onclick="limpiar()" id="blan" value="Blanquear" style="width:20%;text-align:center">
+            <input type="button" onclick="alta()" id="alt" value="Alta" style="width:10%;text-align:center">
+            <input type="button" onclick="modi()" id="mod" value="Modi" style="width:15%;text-align:center">
+            <input type="button" onclick="baja()" id="baj" value="Baja" style="width:15%;text-align:center">
+          </form>
+        </div>
+        <br><br>
+        <div class="anterior">
+          <a href="../index.html">Volver a la pagina anterior.</a>
+          </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      window.onload=function(){
+        document.getElementById("blan").disabled=true;
+        document.getElementById("alt").disabled=true;
+        document.getElementById("mod").disabled=true;
+        document.getElementById("baj").disabled=true;
+      }
+      function activar(){
+        document.getElementById("blan").disabled=false;
+      }
+      function validars(){
+        if (!document.getElementById("saldo").checkValidity()) {
+          alert("El valor introducido no es correcto");
+          document.getElementById("alt").disabled=true;
+          document.getElementById("mod").disabled=true;
+          document.getElementById("baj").disabled=true;
+        }
+        else {
+          document.getElementById("alt").disabled=false;
+          document.getElementById("mod").disabled=false;
+          document.getElementById("baj").disabled=false;
+        }
+      }
+    </script>
+  </body>
+</html>
