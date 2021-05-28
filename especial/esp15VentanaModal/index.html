@@ -2,7 +2,9 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>esp15VentanaModal</title>
+    <script src="./articulos.json">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <style media="screen">
     html,body{
       width:100%;
@@ -17,6 +19,17 @@
       align-items: left;
       text-align: left;
       overflow: auto;
+      position: absolute;
+    }
+    div.fondov{
+      width: 100%;
+      height: 100%;
+      background-color: lightblue;
+      align-items: left;
+      text-align: left;
+      overflow: auto;
+      opacity: 0.3;
+      position: absolute;
     }
     div.caja{
       width: 70%;
@@ -29,7 +42,32 @@
       border-width: thick;
       border-radius: 1%;
       border-color: red;
-
+      visibility: hidden;
+      position: relative;
+      top: 20%;
+    }
+    div.cajav{
+      width: 70%;
+      height: 70%;
+      margin: auto;
+      align-items: left;
+      text-align: left;
+      background-color: lightgreen;
+      border: solid;
+      border-width: thick;
+      border-radius: 1%;
+      border-color: red;
+      visibility: visible;
+      opacity: 1;
+      position: relative;
+      top: 20%;
+    }
+    div.cajac{
+      width: 100%;
+      height: 80%;
+      align-items: left;
+      text-align: left;
+      background-color: lightgreen;
     }
     div.anterior{
       background-color:lightblue;
@@ -54,43 +92,76 @@
       color: black;
     }
     p{
-      font-size: 1vw;
+      font-size: 2vw;
       color: black;
+      float: left;
+      margin-left: 15%;
     }
     input{
       width: 30%;
       height: 10%;
-      text-align: center;
+      text-align: left;
       font-size: 2vw;
-      border-style: double;
-      border-radius: 10%;
-      background-color: gray;
-      color: white;
+      margin-right: 20%;
+      margin-left: 5%;
     }
-    input:hover{
-      background-color: lightgray;
-      color: black;
+    select{
+      width: 30%;
+      height: 10%;
+      text-align: left;
+      font-size: 2vw;
+      margin-left: 5%;
     }
     </style>
   </head>
   <body>
-    <div class="fondo">
+    <div id="fondito" class="fondo">
       <h1>Esto es el div contenedor</h1>
-      <input type="button" name="" value="Abre DIV modal">
-      <h2>Ayudas para el ejercicio</h2>
-      <p>El div contenedor debera se desactivado cuando se active la ventana modal</p>
-      <p>Desactivar el contenedor podria ser darle transparencia y deshabiliar sus botones</p>
-      <p>Desactivado:</p>
-      <p>pointer-event:none</p>
-      <p>opacity:0.3</p>
-      <p>Activado:</p>
-      <p>pointer-event:auto</p>
-      <p>opacity:1</p>
+      <input type="button" id="botonn" onclick="modal()" name="" value="Abre DIV modal">
+      <br><br>
+
       <br><br>
       <div class="anterior">
         <a href="../index.html">Volver a la pagina anterior.</a>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+    <div id="cajita" class="caja">
+      <div class="cajac">
+        <form class="" id="formulario" action="index.html" method="get">
+        <p>codArt:</p><p style="float:right;margin-right:20%">Familia de articulo</p>
+        <input type="text" id="cod" name="" value="">
+        <select id="formArticulosUm" name="" required>
+        </select>
+        <p>Descripcion:</p><p style="float:right;margin-right:20%">Fecha Alta:</p>
+        <input type="text" id="desc" name="" value="">
+        <input type="date" id="fech" name="" value="" style="width:30%;margin-right:0%">
+        <p>Saldo stock:</p><p style="float:right;margin-right:20%">Envio del Formulario</p>
+        <input type="text" id="stock" name="" value="">
+        <input type="button" onclick="enviar()" name="" value="ENVIAR" style="text-align:center;width:30%;margin-left:5%;margin-right:0%">
+        </form>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./articulos.json">
+    </script>
+    <script type="text/javascript">
+    function modal(){
+      document.getElementById("cajita").className="cajav";
+      document.getElementById("fondito").className="fondov";
+      document.getElementById("botonn").disabled=true;
+    }
+    $(document).on('ready',function(){
+      $.getJSON('usuarios.json',function(data){
+        $.each(data, function(key, value){
+          $("#formArticulosUm").append('<option name="' + key + '">' + value + '</option>');
+        })
+      })
+    })
+    function enviar(){
+      document.getElementById("formulario").method="get";
+      document.getElementById("formulario").action="./respuesta.html";
+      document.getElementById("formulario").submit();
+    }
+    </script>
   </body>
 </html>

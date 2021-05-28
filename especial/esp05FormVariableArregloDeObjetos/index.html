@@ -2,11 +2,10 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>esp05FormVariableArregloDebjetos</title>
 
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="./articulos.json">
-
     </script>
 
     <style media="screen">
@@ -91,9 +90,7 @@
         <h1>Formulario para ALTA - Maestro de articulos</h1>
       </div>
       <div class="caja">
-        <form class="" id="formulario" action="index.html" method="post">
-
-
+        <form class="" id="formulario" action="index.html" method="get">
         <p>codArt:</p><p style="float:right;margin-right:20%">Familia de articulo</p>
         <input type="text" id="cod" name="" value="">
         <select id="formArticulosUm" name="" required>
@@ -113,6 +110,7 @@
     </div>
     <script type="text/javascript">
     function enviar(){
+      document.getElementById("formulario").method="get";
       document.getElementById("formulario").action="./respuesta.html";
       document.getElementById("formulario").submit();
     }

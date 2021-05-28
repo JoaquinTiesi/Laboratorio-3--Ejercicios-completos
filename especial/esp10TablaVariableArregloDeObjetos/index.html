@@ -2,9 +2,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
-    </script>
+    <title>esp10TablaVariableArregloDeObjetos</title>
     <style media="screen">
     html,body{
       width:100%;
@@ -139,8 +137,8 @@
         <a href="../index.html">Volver a la pagina anterior.</a>
         </div>
       <h2>Articulos</h2>
-      <input type="button" name="" value="Vaciar Datos">
-      <input type="button" onclick="fila()" name="" value="Cargar Datos">
+      <input type="button" id="vaciar" name="" value="Vaciar Datos">
+      <input type="button" id="cargar" name="" value="Cargar Datos">
       <table>
       <thead>
         <tr>
@@ -152,22 +150,61 @@
           <th campo-dato="saldo">SALDO STOCK</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="tabla">
 
       </tbody>
     </thead>
 
     </div>
     </div>
+    <script src="articulosvariados.json"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript">
-      function fila(){
-        var objTr = document.createElement("tr");
-        var objTd = document.createElement("td");
-        objTd.setAttribute("campo-dato","articulos_codArt");
-        objTd.innerHTML=argValor.codArt;
-        obj.appendChild(objTd);
-        objTbDatos.appendChild(objTr);
-      }
+
+    var lista = JSON.parse(ArticulosVarios);
+
+    $("#cargar").click(function(){
+      lista.Articulos.forEach(function(valor,indice){
+        var fila = document.createElement("tr");
+
+        var cod = document.createElement("td");
+        cod.setAttribute("campo-dato", "cod");
+        cod.innerHTML = valor.cod;
+        fila.appendChild(cod);
+
+        var fam = document.createElement("td");
+        fam.setAttribute("campo-dato", "fam");
+        fam.innerHTML = valor.fam;
+        fila.appendChild(fam);
+
+        var um = document.createElement("td");
+        um.setAttribute("campo-dato", "um");
+        um.innerHTML = valor.um;
+        fila.appendChild(um);
+
+        var desc = document.createElement("td");
+        desc.setAttribute("campo-dato", "desc");
+        desc.innerHTML = valor.desc;
+        fila.appendChild(desc);
+
+        var fecha = document.createElement("td");
+        fecha.setAttribute("campo-dato", "fecha");
+        fecha.innerHTML = valor.fecha;
+        fila.appendChild(fecha);
+
+        var saldo = document.createElement("td");
+        saldo.setAttribute("campo-dato", "saldo");
+        saldo.innerHTML = valor.saldo;
+        fila.appendChild(saldo);
+
+        document.getElementById("tabla").appendChild(fila);
+      });
+
+    })
+
+    $("#vaciar").click(function(){
+      $("#tabla").empty();
+    })
     </script>
   </body>
 </html>

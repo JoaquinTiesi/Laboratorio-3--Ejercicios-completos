@@ -2,7 +2,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>esp20TablaFormulario</title>
     <style media="screen">
     html,body{
       width:100%;
@@ -15,6 +15,17 @@
       height: 100%;
       background-color: lightgray;
       overflow: auto;
+      position: absolute;
+    }
+    div.fondov{
+      width: 100%;
+      height: 100%;
+      background-color: lightblue;
+      align-items: left;
+      text-align: left;
+      overflow: auto;
+      opacity: 0.3;
+      position: absolute;
     }
     div.encabezado{
       width: 100%;
@@ -126,9 +137,48 @@
       padding-top: 2%;
     }
     h2{
-      margin-left: 25%;
+      margin-left: 20%;
       display: inline-block;
     }
+    div.cajaa{
+      width: 70%;
+      height: 70%;
+      margin: auto;
+      align-items: left;
+      text-align: left;
+      background-color: lightgreen;
+      border: solid;
+      border-width: thick;
+      border-radius: 1%;
+      border-color: red;
+      visibility: hidden;
+      position: relative;
+      top: 20%;
+    }
+    div.cajav{
+      width: 70%;
+      height: 70%;
+      margin: auto;
+      align-items: left;
+      text-align: left;
+      background-color: lightgreen;
+      border: solid;
+      border-width: thick;
+      border-radius: 1%;
+      border-color: red;
+      visibility: visible;
+      opacity: 1;
+      position: relative;
+      top: 5%;
+    }
+    div.cajac{
+      width: 100%;
+      height: 70%;
+      align-items: left;
+      text-align: left;
+      background-color: lightgreen;
+    }
+
     </style>
   </head>
   <body>
@@ -137,9 +187,9 @@
         <a href="../index.html">Volver a la pagina anterior.</a>
         </div>
       <h2>Articulos</h2>
-      <input type="button" name="" value="Cargar Form">
-      <input type="button" name="" value="Vaciar Datos">
-      <input type="button" name="" value="Cargar Datos">
+      <input type="button" id="botonn" onclick="modal()" name="" value="Cargar Form">
+      <input type="button" id="vaciar" name="" value="Vaciar Datos">
+      <input type="button" id="cargar" name="" value="Cargar Datos">
       <table>
       <thead>
         <tr>
@@ -151,11 +201,106 @@
           <th campo-dato="saldo">SALDO STOCK</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="tabla">
 
       </tbody>
     </thead>
-
     </div>
+    </div>
+    <div id="cajita" class="cajaa">
+      <div class="cajac">
+        <form class="" id="formulario" action="index.html" method="get">
+        <p>codArt:</p><p style="float:right;margin-right:20%">Familia de articulo</p>
+        <input type="text" id="cod" name="" value="" style="float:left;margin-left:10%">
+        <select id="formArticulosUm" name="" required style="margin-left:25%">
+        </select>
+        <br><br>
+        <p>Descripcion:</p><p style="float:right;margin-right:20%">Fecha Alta:</p><br>
+        <input type="text" id="desc" name="" value="" style="float:left;margin-left:10%">
+        <input type="date" id="fech" name="" value="" style="width:30%;margin-right:10%;float:right">
+        <br><br><br>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p style="float:left">Saldo stock:</p><p style="float:right;margin-right:20%">Envio del Formulario</p>
+        <br><br>
+        <input type="text" id="stock" name="" value="" style="float:left;margin-left:10%">
+        <input type="button" onclick="enviar()" name="" value="ENVIAR" style="text-align:center;width:30%;margin-left:0%;margin-right:10%;float:right">
+        </form>
+      </div>
+    </div>
+    <script src="articulosvariados.json"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    var lista = JSON.parse(ArticulosVarios);
+
+    $("#cargar").click(function(){
+      lista.Articulos.forEach(function(valor,indice){
+        var fila = document.createElement("tr");
+
+        var cod = document.createElement("td");
+        cod.setAttribute("campo-dato", "cod");
+        cod.innerHTML = valor.cod;
+        fila.appendChild(cod);
+
+        var fam = document.createElement("td");
+        fam.setAttribute("campo-dato", "fam");
+        fam.innerHTML = valor.fam;
+        fila.appendChild(fam);
+
+        var um = document.createElement("td");
+        um.setAttribute("campo-dato", "um");
+        um.innerHTML = valor.um;
+        fila.appendChild(um);
+
+        var desc = document.createElement("td");
+        desc.setAttribute("campo-dato", "desc");
+        desc.innerHTML = valor.desc;
+        fila.appendChild(desc);
+
+        var fecha = document.createElement("td");
+        fecha.setAttribute("campo-dato", "fecha");
+        fecha.innerHTML = valor.fecha;
+        fila.appendChild(fecha);
+
+        var saldo = document.createElement("td");
+        saldo.setAttribute("campo-dato", "saldo");
+        saldo.innerHTML = valor.saldo;
+        fila.appendChild(saldo);
+
+        document.getElementById("tabla").appendChild(fila);
+      });
+
+    })
+
+    $("#vaciar").click(function(){
+      $("#tabla").empty();
+    })
+    </script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./articulos.json"></script>
+    <script type="text/javascript">
+    function modal(){
+      document.getElementById("cajita").className="cajav";
+      document.getElementById("fondito").className="fondov";
+      document.getElementById("botonn").disabled=true;
+      document.getElementById("vaciar").disabled=true;
+      document.getElementById("cargar").disabled=true;
+    }
+    $(document).on('ready',function(){
+      $.getJSON('usuarios.json',function(data){
+        $.each(data, function(key, value){
+          $("#formArticulosUm").append('<option name="' + key + '">' + value + '</option>');
+        })
+      })
+    })
+    function enviar(){
+      document.getElementById("formulario").method="get";
+      document.getElementById("formulario").action="./respuesta.html";
+      document.getElementById("formulario").submit();
+    }
+    </script>
   </body>
 </html>
