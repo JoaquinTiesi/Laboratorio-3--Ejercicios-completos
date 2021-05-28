@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    html,body{
+      width:100%;
+      height:100%;
+      margin:0%;
+      overflow: hidden;
+    }
+    div.fondo{
+      width: 100%;
+      height: 100%;
+      background-color: lightgray;
+      overflow: auto;
+    }
+    div.encabezado{
+      width: 100%;
+      height: 5%;
+      background-color: lightgray;
+      align-items: center;
+      text-align: center;
+    }
+    div.caja{
+      width: 100%;
+      height: 80%;
+      align-items: left;
+      text-align: left;
+      background-color: lightgreen;
+    }
+    div.anterior{
+      background-color:lightblue;
+      margin:auto;
+      box-sizing:border-box;
+      border: solid;
+      border-color: red;
+      font-size: 2vw;
+      width: 25%;
+    }
+    img{
+      max-width:100%;
+      max-height:100%;
+      width:80%;
+      height: 80%;
+      opacity: 0.5;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1{
+      color: black;
+      font-size: 2vw;
+
+    }
+    p{
+      font-size: 2vw;
+      color: black;
+      float: left;
+      margin-left: 15%;
+    }
+    input{
+      width: 20%;
+      height: 10%;
+      font-size: 2vw;
+      float: right;
+    }
+    select{
+      width: 30%;
+      height: 10%;
+      text-align: left;
+      font-size: 2vw;
+      margin-left: 5%;
+    }
+    header{
+      width: 100%;
+      height: 10%;
+      text-align: center;
+      background-color: lightblue;
+      padding-top: 2%;
+    }
+    table{
+      border-collapse: collapse;
+      margin-top: 0%;
+      width: 100%;
+      overflow: auto;
+      border-style: solid;
+      border-width: thin;
+      border-color: black;
+    }
+    thead tr{
+      background-color: lightyellow;
+      color: gray;
+      height: 40px;
+    }
+    tbody{
+      background-color: lightblue;
+      overflow: auto;
+      overflow-x: hidden;
+      display: block;
+      height: 160px;
+    }
+    thead, tbody tr{
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+    @media(max-width:1200px){
+      [campo-dato:'Skpe']{display: none;}
+    }
+    tbody tr:nth-child(odd){
+      background:rgba(0,0,0,.2)
+    }
+    tbody tr{
+      color:black;
+      font-style: arial;
+      text-align: center;
+      height: 50px;
+    }
+    footer{
+      height: 10%;
+      width: 100%;
+      text-align: left;
+      background-color: lightblue;
+      padding-top: 2%;
+    }
+    h2{
+      margin-left: 30%;
+      display: inline-block;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+      <div class="anterior">
+        <a href="../index.html">Volver a la pagina anterior.</a>
+        </div>
+      <h2>Articulos</h2>
+      <input type="button" name="" value="Vaciar Datos">
+      <input type="button" name="" value="Cargar Datos">
+      <table>
+      <thead>
+        <tr>
+          <th campo-dato="cod">COD.ART.</th>
+          <th campo-dato="fam">FAMILIA</th>
+          <th campo-dato="um">UM</th>
+          <th campo-dato="desc">DESCRIPCION</th>
+          <th campo-dato="fecha">FECHA ALTA</th>
+          <th campo-dato="saldo">SALDO STOCK</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </thead>
+
+    </div>
+    </div>
+  </body>
+</html>
