@@ -91,29 +91,40 @@
         <h1>Formulario para ALTA - Maestro de articulos</h1>
       </div>
       <div class="caja">
+        <form class="" id="formulario" action="index.html" method="post">
+
+
         <p>codArt:</p><p style="float:right;margin-right:20%">Familia de articulo</p>
         <input type="text" id="cod" name="" value="">
-        <select id="formArticulosUm" name="formArticulosUm" required>
+        <select id="formArticulosUm" name="" required>
         </select>
         <p>Descripcion:</p><p style="float:right;margin-right:20%">Fecha Alta:</p>
         <input type="text" id="desc" name="" value="">
         <input type="date" id="fech" name="" value="" style="width:30%;margin-right:0%">
         <p>Saldo stock:</p><p style="float:right;margin-right:20%">Envio del Formulario</p>
         <input type="text" id="stock" name="" value="">
-        <input type="button" id="enviar" name="" value="ENVIAR" style="text-align:center;width:30%;margin-left:5%;margin-right:0%">
+        <input type="button" onclick="enviar()" name="" value="ENVIAR" style="text-align:center;width:30%;margin-left:5%;margin-right:0%">
+        </form>
       </div>
       <br><br>
       <div class="anterior">
         <a href="../index.html">Volver a la pagina anterior.</a>
         </div>
     </div>
+    <script type="text/javascript">
+    function enviar(){
+      document.getElementById("formulario").action="./respuesta.html";
+      document.getElementById("formulario").submit();
+    }
+    </script>
+    <script type="text/javascript">
 
-
+    </script>
     <script type="text/javascript">
     $(document).on('ready',function(){
       $.getJSON('usuarios.json',function(data){
         $.each(data, function(key, value){
-          $("#usuarios").append('<option name="' + key + '">' + value + '</option>');
+          $("#formArticulosUm").append('<option name="' + key + '">' + value + '</option>');
         })
       })
     })
