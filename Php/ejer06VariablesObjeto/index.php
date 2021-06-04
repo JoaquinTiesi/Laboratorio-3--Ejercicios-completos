@@ -91,10 +91,34 @@
   <body>
     <div class="fondo">
       <div class="encabezado">
-
+        <h1>Ejercicio06 VariablesObjeto</h1>
       </div>
       <div class="caja">
-
+        <h1>Variables Tipo Objeto en PHP. Objeto Renglon de pedido</h1>
+        <h1><span style="color:blue">$objRenglonPedido</h1>
+        <?php
+        $objRenglonPedido = new stdClass;
+        $objRenglonPedido -> codArt = "cp001";
+        $objRenglonPedido -> desc = "Jaguel 800 gr"
+        $objRenglonPedido -> precioUnitario = 2000;
+        $objRenglonPedido -> cant = 2;
+        $renglonesPedido = [];
+        array_push($renglonesPedido, $objRenglonPedido);
+        $objRenglonPedido -> codArt = "cp002";
+        $objRenglonPedido -> desc = "Jaguel 400 gr"
+        $objRenglonPedido -> precioUnitario = 1400;
+        $objRenglonPedido -> cant = 10;
+        array_push($renglonesPedido, $objRenglonPedido);
+        foreach ($renglonesPedido as $objRenglonPedido) {
+          echo $objRenglonPedido -> codArt;
+          echo $objRenglonPedido -> desc;
+          echo $objRenglonPedido -> precioUnitario;
+          echo $objRenglonPedido -> cant;
+        }
+         ?>
+         <h1>Tipo de $objRenglonPedido: <?php echo gettype($objRenglonPedido) ?></h1>
+         <h1>Definamos arreglo de pedidos:</h1>
+         <h2><span style="color:blue">#$renglonesPedido</span> </h2>
       </div>
       <div class="anterior">
         <a href="../index.html">Volver a la pagina anterior.</a>

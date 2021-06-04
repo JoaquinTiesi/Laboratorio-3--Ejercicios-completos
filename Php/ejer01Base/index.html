@@ -57,12 +57,6 @@
       font-size: 2vw;
 
     }
-    p{
-      font-size: 2vw;
-      color: black;
-      float: left;
-      margin-left: 15%;
-    }
     table{
       border-collapse: collapse;
     }
