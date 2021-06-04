@@ -104,20 +104,46 @@
               </tr>
               <tr>
                 <td>SERVER_PORT</td>
-                <td>80</td>
+                <td><?php echo $_SERVER['SERVER_PORT']; ?></td>
               </tr>
               <tr>
                 <td>SERVER_NAME</td>
-                <td>Joaquintiesi.herokuapp.com</td>
+                <td><?php echo $_SERVER['SERVER_NAME']; ?></td>
               </tr>
               <tr>
                 <td>DOCUMENT_ROOT</td>
-                <td>/app</td>
+                <td><?php echo $_SERVER['DOCUMENT_ROOT']; ?></td>
               </tr>
           </tbody>
         </table>
         <br><br>
-        <h1>Variables</h1>
+        <h1>Variables de Cliente</h1>
+        <table>
+          <tbody>
+            <tr>
+              <td>REMOTE_ADDR</td>
+              <td><?php echo $_SERVER['REMOTE_ADDR']; ?></td>
+            </tr>
+            <tr>
+              <td>REMOTE_PORT</td>
+              <td><?php echo $_SERVER['REMOTE_PORT']; ?></td>
+            </tr>
+          </tbody>
+        </table>
+        <br><br>
+        <h1>Variables de Requerimiento</h1>
+        <table>
+          <tbody>
+            <tr>
+              <td>SCRIPT_NAME</td>
+              <td><?php echo $_SERVER['SCRIPT_NAME']; ?></td>
+            </tr>
+            <tr>
+              <td>REQUEST_METHOD</td>
+              <td><?php echo $_SERVER['REQUEST_METHOD']; ?></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="anterior">
         <a href="../index.html">Volver a la pagina anterior.</a>
