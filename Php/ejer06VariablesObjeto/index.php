@@ -112,7 +112,6 @@
          cp001  Jaguel  800 gr  2000  2
          <br><br>
          <h2>Cantidad de renglones:</h2>
-         <?php echo sizeof($renglonesPedido) ?>
          <br>
          <h1>Procuccion de un JSON jsnRenglones:</h1>
          <br>
