@@ -2,7 +2,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>ejer06VariablesObjeto</title>
     <style media="screen">
     html,body{
       width:100%;
@@ -104,31 +104,34 @@
         $objRenglonPedido -> cant = 2;
         $renglonesPedido = [];
         array_push($renglonesPedido, $objRenglonPedido);
-        $objRenglonPedido -> codArt = "cp002";
-        $objRenglonPedido -> desc = "Jaguel 400 gr"
-        $objRenglonPedido -> precioUnitario = 1400;
-        $objRenglonPedido -> cant = 10;
-        array_push($renglonesPedido, $objRenglonPedido);
+        $objRenglonPedido1 = new stdClass;
+        $objRenglonPedido1 -> codArt = "cp001";
+        $objRenglonPedido1 -> desc = "Jaguel 800 gr"
+        $objRenglonPedido1 -> precioUnitario = 2000;
+        $objRenglonPedido1 -> cant = 2;
+        array_push($renglonesPedido, $objRenglonPedido1);
         foreach ($renglonesPedido as $objRenglonPedido) {
           echo $objRenglonPedido -> codArt;
           echo $objRenglonPedido -> desc;
           echo $objRenglonPedido -> precioUnitario;
           echo $objRenglonPedido -> cant;
+          echo $objRenglonPedido1 -> codArt;
+          echo $objRenglonPedido1 -> desc;
+          echo $objRenglonPedido1 -> precioUnitario;
+          echo $objRenglonPedido1 -> cant;
         }
          ?>
          <h1>Tipo de $objRenglonPedido: <?php echo gettype($objRenglonPedido) ?></h1>
          <h1>Definamos arreglo de pedidos:</h1>
          <h2><span style="color:blue">#$renglonesPedido</span> </h2>
          cp001  Jaguel  800 gr  2000  2
-         cp002  Jaguel  400 gr  1400  10
+         cp001  Jaguel  800 gr  2000  2
          <br><br>
          <h2>Cantidad de renglones:</h2>
          <?php echo sizeof($renglonesPedido) ?>
          <br>
          <h1>Procuccion de un JSON jsnRenglones:</h1>
          <br>
-         <?php $jsonRenglonesPedido = json_encode($renglonesPedido);
-         echo $jsonRenglonesPedido ?>
       </div>
       <div class="anterior">
         <a href="../index.html">Volver a la pagina anterior.</a>
