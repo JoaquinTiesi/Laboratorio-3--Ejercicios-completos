@@ -145,15 +145,6 @@
           </tbody>
         </table>
         <h1>Todos los valores</h1>
-        <?php
-
-          foreach($_SERVER as $key_name => $key_value) {
-
-              print $key_name . ” = ” . $key_value . “<br>”;
-
-            }
-
-            ?>
       </div>
       <div class="anterior">
         <a href="../index.html">Volver a la pagina anterior.</a>
