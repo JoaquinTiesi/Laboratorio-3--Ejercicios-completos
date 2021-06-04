@@ -1,0 +1,11 @@
+<?php
+        $objRenglonPedido = new stdClass;
+        $objRenglonPedido -> codArt = "cp001";
+        $objRenglonPedido -> desc = "Jaguel 800 gr"
+        $objRenglonPedido -> precioUnitario = 2000;
+        $objRenglonPedido -> cant = 2;
+        $renglonesPedido = [];
+        array_push($renglonesPedido, $objRenglonPedido);
+         ?>
+
+<?php echo gettype($objRenglonPedido) ?>
