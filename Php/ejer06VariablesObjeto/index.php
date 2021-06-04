@@ -104,22 +104,6 @@
         $objRenglonPedido -> cant = 2;
         $renglonesPedido = [];
         array_push($renglonesPedido, $objRenglonPedido);
-        $objRenglonPedido1 = new stdClass;
-        $objRenglonPedido1 -> codArt = "cp001";
-        $objRenglonPedido1 -> desc = "Jaguel 800 gr"
-        $objRenglonPedido1 -> precioUnitario = 2000;
-        $objRenglonPedido1 -> cant = 2;
-        array_push($renglonesPedido, $objRenglonPedido1);
-        foreach ($renglonesPedido as $objRenglonPedido) {
-          echo $objRenglonPedido -> codArt;
-          echo $objRenglonPedido -> desc;
-          echo $objRenglonPedido -> precioUnitario;
-          echo $objRenglonPedido -> cant;
-          echo $objRenglonPedido1 -> codArt;
-          echo $objRenglonPedido1 -> desc;
-          echo $objRenglonPedido1 -> precioUnitario;
-          echo $objRenglonPedido1 -> cant;
-        }
          ?>
          <h1>Tipo de $objRenglonPedido: <?php echo gettype($objRenglonPedido) ?></h1>
          <h1>Definamos arreglo de pedidos:</h1>
