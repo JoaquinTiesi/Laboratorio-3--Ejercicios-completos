@@ -96,16 +96,23 @@
       <div class="caja">
         <h1>Variables Tipo Objeto en PHP. Objeto Renglon de pedido</h1>
         <h1><span style="color:blue">$objRenglonPedido</h1>
-         <h1>Tipo de $objRenglonPedido: </h1>
+          <p>Código de artículo: cp001 <br>
+            Descripción del artículo: Jaguel 800 gr <br>
+            Precio unitario: 2000 <br>
+            Cantidad: 2 <br></p>
+         <h1>Tipo de $objRenglonPedido: object </h1>
          <h1>Definamos arreglo de pedidos:</h1>
          <h2><span style="color:blue">#$renglonesPedido</span> </h2>
-         cp001  Jaguel  800 gr  2000  2
-         cp001  Jaguel  800 gr  2000  2
-         <br><br>
-         <h2>Cantidad de renglones:</h2>
+         cp001  Jaguel  800 gr  2000  2<br>cp001  Jaguel  800 gr  2000  2<br>
          <br>
-         <h1>Procuccion de un JSON jsnRenglones:</h1>
+         <h2>Cantidad de renglones: 2</h2>
          <br>
+         <h1>Producción de un objeto <span style="color:blue";>$objRenglonesPedido</span> con dos atributos array renglonesPedido y cantidadDeRenglones</h1>
+         <p>Cantidad de renglones: 2</p>
+         <br>
+         <h1>Producción de un JSON jsonRenglones:</h1>
+         <br>
+         <p>{"renglonesPedido":[{"codArt":"cp001","descripcion":"Jaguel 800 gr","precioUnitario":2000,"cantidad":2},{"codArt":"cp001","descripcion":"Jaguel 800 gr","precioUnitario":2000,"cantidad":2}],"cantidadDeRenglones":2}</p>
       </div>
       <div class="anterior">
         <a href="../index.html">Volver a la pagina anterior.</a>

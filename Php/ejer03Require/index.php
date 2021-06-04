@@ -98,10 +98,10 @@
         <br>
         <h2>Las variables son:</h2>
         <br>
-        <b>warning</b>: Use of undefined constant includeInexistente - assumed 'includeInexistente' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\joa\Php\ejer02Include\index.php on line 101 <br><br>
-        <b>warning</b>: Use of undefined constant inc - assumed 'inc' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\joa\Php\ejer02Include\index.php on line 101 <br><br>
-        <b>warning</b>: require(includeInexistenteinc): failed to open stream: No such file or directory in C:\xampp\htdocs\joa\Php\ejer02Include\index.php on line 101 <br><br>
-        <b>warning</b>: require(includeInexistenteinc): failed to open stream: No such file or directory in C:\xampp\htdocs\joa\Php\ejer02Include\index.php on line 101 <br><br>
+        <b>Warning</b>: Use of undefined constant includeInexistente - assumed 'includeInexistente' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\joa\Php\ejer02Include\index.php on line 101 <br><br>
+        <b>Warning</b>: Use of undefined constant inc - assumed 'inc' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\joa\Php\ejer02Include\index.php on line 101 <br><br>
+        <b>Warning</b>: require(includeInexistenteinc): failed to open stream: No such file or directory in C:\xampp\htdocs\joa\Php\ejer02Include\index.php on line 101 <br><br>
+        <b>Warning</b>: require(includeInexistenteinc): failed to open stream: No such file or directory in C:\xampp\htdocs\joa\Php\ejer02Include\index.php on line 101 <br><br>
         <b>Fatal error</b>:  require(): Failed opening required 'includeInexistenteinc' (include_path='.:/usr/share/pear:/usr/share/php') in C:\xampp\htdocs\joa\Php\ejer02Include\index.php on line 101 <br><br>
       </div>
       <div class="anterior">
