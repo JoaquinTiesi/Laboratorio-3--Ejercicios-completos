@@ -83,7 +83,7 @@
   <body>
     <div class="fondo">
       <div class="encabezado">
-        <h1>Ejercicio10 Formulario</h1>
+        <h1>Ejercicio14 Formulario a encriptar</h1>
       </div>
       <div class="caja">
         <h1>Encriptacion en PHP</h1>
