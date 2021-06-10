@@ -87,7 +87,7 @@
       </div>
       <div class="caja">
         <h1>Encriptacion en PHP</h1>
-        <form action="procesar.php" method="post">
+        <form action="procesar.php" method="get">
           Cadena a encriptar:
           <input type="text" required="required" name="cadena" value="">
           <input type="submit" name="submit" value="Enviar">
