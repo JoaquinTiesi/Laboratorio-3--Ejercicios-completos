@@ -87,21 +87,12 @@
       </div>
       <div class="caja">
         <h1>Encriptacion en PHP</h1>
+        <form action="procesar.php" method="post">
+          Cadena a encriptar:
+          <input type="text" required="required" name="cadena" value="">
+          <input type="submit" name="submit" value="Enviar">
+        </form>
         <br><br>
-        <?php
-        if (isset($_POST['submit'])) {
-
-          echo "Hola mundo";
-        }
-        else {
-          <html>
-          <form action="index.php" method="post">
-            Cadena a encriptar:
-            <input type="text" required="required" name="cadena" value="">
-            <input type="submit" name="submit" value="Enviar">
-          </form>
-          </html>
-        } ?>
       </div>
       <div class="anterior">
         <a href="../index.html">Volver a la pagina anterior.</a>
