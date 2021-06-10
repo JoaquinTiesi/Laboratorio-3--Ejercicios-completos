@@ -1,8 +1,8 @@
 <?php
-echo "Clave = ".$_POST['cadena'];
+echo "Clave = ".$_POST['encriptar'];
 echo "<br>";
 echo "Clave encripta en md5(): ";
-$CLAVE = $_POST['cadena'];
+$CLAVE = $_POST['encriptar'];
 echo md5($CLAVE);
 echo "<br>";
 echo "Clave encriptada en sha1(): ";
