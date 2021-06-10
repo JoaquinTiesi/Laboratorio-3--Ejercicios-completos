@@ -235,7 +235,7 @@
 
 					$.ajax({
 						type: "post",
-						url: "./index.php",
+						url: "./encriptado.php",
 						data: {encriptar: $("#cadena").val()},
 						success: (respuesta, estado) => {
 							$('#mostrarResultado').empty();
