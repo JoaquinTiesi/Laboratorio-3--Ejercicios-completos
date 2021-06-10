@@ -87,11 +87,16 @@
       </div>
       <div class="caja">
         <h1>Encriptacion en PHP</h1>
-        <form action="indice.php" method="get">
-          Cadena a encriptar:
-          <input type="text" required="required" name="cadena" value="">
-          <input type="submit" name="submit" value="Enviar">
-        </form>
+        <?php
+        echo "Clave = ".$_GET['cadena'];
+        echo "<br>";
+        echo "Clave encripta en md5(): ";
+        $CLAVE = $_GET['cadena'];
+        echo md5($CLAVE);
+        echo "<br>";
+        echo "Clave encriptada en sha1(): ";
+        echo sha1($CLAVE);
+         ?>
         <br><br>
       </div>
       <div class="anterior">
