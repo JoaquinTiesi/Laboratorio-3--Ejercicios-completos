@@ -1,4 +1,5 @@
 <?php
+sleep(3);
 echo "Clave = ".$_POST['encriptar'];
 echo "<br>";
 echo "Clave encripta en md5(): ";
