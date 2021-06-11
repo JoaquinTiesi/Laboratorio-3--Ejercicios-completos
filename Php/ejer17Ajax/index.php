@@ -185,7 +185,7 @@
 				ul li {
 					width: 49%;
 				}
-        @media (max-width: 400px) {
+        @media (max-width: 600px) {
   				ul li {
   					width: 100%;
   				}
