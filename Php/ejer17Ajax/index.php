@@ -171,7 +171,7 @@
 
 			@media (max-width: 1600px) {
 				ul li {
-					width: 24%;
+					width: 24.5%;
 				}
 			}
 
