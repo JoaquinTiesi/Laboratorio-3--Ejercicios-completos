@@ -171,20 +171,24 @@
 
 			@media (max-width: 1600px) {
 				ul li {
-					width: 33.3%;
+					width: 24%;
 				}
 			}
 
 			@media (max-width: 1200px) {
 				ul li {
-					width: 50%;
+					width: 33.3%;
 				}
 			}
 
 			@media (max-width: 800px) {
 				ul li {
-					width: 100%;
+					width: 49%;
 				}
+        @media (max-width: 400px) {
+  				ul li {
+  					width: 100%;
+  				}
 
 				#container {
 				width: 95%;
