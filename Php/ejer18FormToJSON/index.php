@@ -184,7 +184,7 @@
 				width: 50%;
 				min-width: 300px;
 				min-height: 100px;
-				background-color: #DCDCDC;
+				background-color: lightblue;
 				border: 2px solid #A9A9A9;
 				padding: 20px;
 			}
@@ -317,8 +317,8 @@
 							usuario: $("#usuario").val(),
 							login: $("#login").val(),
 							apellido: $("#apellido").val(),
-							nombres: $("#nombres").val(),
-							fechaNacimiento: $("#fechaNacimiento").val()
+							nombre: $("#nombres").val(),
+							fecha: $("#fechaNacimiento").val()
 						},
 						success: (respuesta) => {
 							$('#mostrarResultado').empty();
