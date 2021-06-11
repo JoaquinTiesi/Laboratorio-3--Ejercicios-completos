@@ -300,6 +300,7 @@
 					</div>
 				</form>
 			</div>
+      <div id="backdrop"></div>
       <div class="anterior">
         <a href="../index.html">Volver a la pagina anterior.</a>
         </div>
