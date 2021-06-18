@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ejer20BDLista</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="jquery-3.6.0.min.js" type="text/javascript"></script>
+    <style media="screen">
+    html,body{
+      width:100%;
+      height:100%;
+      margin:0%;
+      overflow: hidden;
+    }
+    div.fondo{
+      width: 100%;
+      height: 100%;
+      background-color: lightgray;
+      align-items: center;
+      text-align: center;
+      overflow: auto;
+    }
+    div.encabezado{
+      width: 100%;
+      height: 11%;
+      background-color: lightgray;
+      align-items: center;
+      text-align: center;
+    }
+    div.caja{
+      width: 100%;
+      height: 80%;
+      align-items: left;
+      text-align: left;
+      background-color: white;
+      overflow: auto;
+    }
+    div.anterior{
+      background-color:lightblue;
+      margin:auto;
+      box-sizing:border-box;
+      float:right;
+      border: solid;
+      border-color: red;
+      font-size: 2vw;
+    }
+    img{
+      max-width:100%;
+      max-height:100%;
+      width:80%;
+      height: 80%;
+      opacity: 0.5;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    * {
+				margin: 0;
+				padding: 0;
+				font-size: 1em;
+				box-sizing: border-box;
+			}
+
+			body {
+				background-color: #FAF0E6;
+			}
+
+			header {
+				position: relative;
+			}
+
+			h1, h2 {
+				text-align: center;
+			}
+
+			h1 {
+				font-size: 2.5em;
+				color: #CD853F;
+			}
+
+			h2 {
+				font-size: 2em;
+				color: #D3D3D3;
+				font-style: italic;
+			}
+
+			#container {
+				width: 98vw;
+				height: 100vh;
+				margin: 0 auto;
+				background-color: #FFFAF0;
+				overflow: hidden;
+			}
+
+			#botonera {
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 5px;
+			}
+
+			#botonera button {
+				width: 100px;
+				height: 50px;
+				margin: 15px 0;
+			}
+
+			main {
+				height: 50vh;
+				overflow: auto;
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			td, th {
+				min-width: 200px;
+			}
+
+			thead {
+				background-color: #CD5C5C;
+				position: sticky;
+				top: 0;
+				z-index: 2;
+			}
+
+			th {
+				border: 2px solid #800000;
+			}
+
+			tbody {
+				background-color: #F5F5F5;
+				color: #333333;
+			}
+
+			td {
+				border: 1px solid #F5DEB3;
+				height: 50px;
+				text-align: center;
+			}
+
+			p.total {
+				font-size: 1.3em;
+				margin-bottom: 1em;
+			}
+
+			footer {
+				padding: 10px 0;
+			}
+
+			footer p {
+				text-align: center;
+			}
+
+			footer p a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+			footer p a:hover {
+				text-decoration: underline;
+			}
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+      <div class="encabezado">
+        <h1>Ejercicio 20 BDLista</h1>
+        <div id="botones">
+          <input type="button" id="cargar" value="Cargar">
+          <input type="button" id="limpiar" value="Limpiar">
+        </div>
+      </div>
+      <div class="caja">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Fecha</th>
+              <th>Inscripto</th>
+              <th>Legajo</th>
+              <th>Promedio</th>
+              <th>Foto carnet</th>
+              <th>ID</th>
+            </tr>
+          </thead>
+          <tbody id="campos"></tbody>
+        </table>
+      </div>
+      Total de registros: <span id="totales"></span>
+      <div class="anterior">
+        <a href="../index.html">Volver a la pagina anterior.</a>
+        </div>
+    </div>
+    <script>
+      $('#cargar').click(()=>{
+        var campos = document.getElementById("campos");
+        $('#campos').empty();
+        $('#totales').html("0");
+        $('#campos').html("<tr><td colspan = '8'>Cargando informacion</td></tr>");
+        $.ajax({
+          type: "post",
+          url: "./PHPData.php",
+          data: {},
+          success: (respuesta)=>{
+            $('#campos').empty();
+            var json = JSON.parse(respuesta);
+            $("#totales").html(json.cuenta);
+            json.usuario.forEach((item) => {
+              var tere = document.createElement("tr");
+              for(var key in item){
+                var tede = document.createElement("td");
+                tede.innerHTML = item[key];
+                tere.appendChild(tede);
+              }
+              campos.appendChild(tere);
+            });
+          }
+        });
+        event.preventDefault();
+      });
+
+      $("#limpiar").click(()=>{
+        $("#campos").empty();
+        $("#totales").html("0");
+      });
+    </script>
+  </body>
+</html>
