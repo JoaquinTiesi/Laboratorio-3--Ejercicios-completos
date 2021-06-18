@@ -6,11 +6,11 @@ require("datosConexionBase.inc");
 $sql = "select * from listausuarios where ";
 $sql=$sql."nombre LIKE ? and ";
 $sql=$sql."apellido LIKE ? and ";
-$sql=$sql."fecha LIKE ? and ";
+$sql=$sql."Fecha LIKE ? and ";
 $sql=$sql."inscripto LIKE ? and ";
 $sql=$sql."legajo LIKE ? and ";
-$sql=$sql."promedio LIKE ? and ";
-$sql=$sql."foto LIKE ? and ";
+$sql=$sql."Promedio LIKE ? and ";
+$sql=$sql."foto-carnet LIKE ? and ";
 $sql=$sql."id LIKE ? and ";
 $sql=$sql."order by ".$_POST['orden'];
 
@@ -24,10 +24,14 @@ $likeFoto= "%".$_POST['foto']."%";
 $likeId= "%".$_POST['id']."%";
 
 
-if (( $resultado = $mysqli->prepare($sql))) { //devuelve obj $resultado
-  if($resultado->bind_param("ssssssss", $likeNombre, $likeApellido, $likeFecha, $likeInscripto, $likeLegajo, $likePromedio, $likeFoto, $likeId)){
-    if($resultado->execute()){
+
+if ($sentencia = $mysqli->prepare($sql)) { //devuelve obj $resultado
+  echo "hola";
+  if($sentencia->bind_param("ssssssss", $likeNombre, $likeApellido, $likeFecha, $likeInscripto, $likeLegajo, $likePromedio, $likeFoto, $likeId)){
+    if($sentencia->execute()){
+      $resultado = $sentencia->get_result();
       $resultadoCuentaRegistros = $resultado->num_rows;
+      echo $resultado->num_rows;
       $articulos=[];
       while($fila=$resultado->fetch_assoc()) {
       $objArticulo = new stdClass();

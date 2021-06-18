@@ -238,6 +238,7 @@
           id: $("#filtradoid").val(),
         },
         success: (respuesta) => {
+          console.log(respuesta);
           $('#campos').empty();
           var json = JSON.parse(respuesta);
           $("#totales").html(json.cuenta);
