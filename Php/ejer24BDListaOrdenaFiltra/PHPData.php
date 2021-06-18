@@ -10,8 +10,8 @@ $sql=$sql."Fecha LIKE ? and ";
 $sql=$sql."inscripto LIKE ? and ";
 $sql=$sql."legajo LIKE ? and ";
 $sql=$sql."Promedio LIKE ? and ";
-$sql=$sql."foto-carnet LIKE ? and ";
-$sql=$sql."id LIKE ? and ";
+//$sql=$sql."foto-carnet LIKE ? and ";
+$sql=$sql."id LIKE ? ";
 $sql=$sql."order by ".$_POST['orden'];
 
 $likeNombre= "%".$_POST['nombre']."%";
@@ -26,12 +26,10 @@ $likeId= "%".$_POST['id']."%";
 
 
 if ($sentencia = $mysqli->prepare($sql)) { //devuelve obj $resultado
-  echo "hola";
-  if($sentencia->bind_param("ssssssss", $likeNombre, $likeApellido, $likeFecha, $likeInscripto, $likeLegajo, $likePromedio, $likeFoto, $likeId)){
+  if($sentencia->bind_param("sssssss", $likeNombre, $likeApellido, $likeFecha, $likeInscripto, $likeLegajo, $likePromedio, $likeId)){
     if($sentencia->execute()){
       $resultado = $sentencia->get_result();
       $resultadoCuentaRegistros = $resultado->num_rows;
-      echo $resultado->num_rows;
       $articulos=[];
       while($fila=$resultado->fetch_assoc()) {
       $objArticulo = new stdClass();
@@ -55,5 +53,8 @@ if ($sentencia = $mysqli->prepare($sql)) { //devuelve obj $resultado
       die();
     }
   }
+}
+else {
+  echo $mysqli->error;
 }
  ?>
