@@ -1,7 +1,7 @@
 <?php
 require("datosConexionBase.inc");
-//$sql = "select * from listausuarios order by".$orden;
-$sql = "select * from listausuarios order by orden DESC";
+$sql = "select * from listausuarios order by ".$_POST['orden'];
+//$sql = "select * from listausuarios order by orden DESC";
 
 if (( $resultado = $mysqli->query($sql))) { //devuelve obj $resultado
   $resultadoCuentaRegistros = $resultado->num_rows;

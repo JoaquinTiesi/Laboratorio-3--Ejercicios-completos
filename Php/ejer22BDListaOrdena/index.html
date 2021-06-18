@@ -213,7 +213,6 @@
       $('#totales').html("0");
       $('#campos').html("<tr><td colspan = '8'>Cargando informacion</td></tr>");
 
-      //$("#orden").val("ordenAsignado");
 
       $.ajax({
         type: "post",
@@ -222,6 +221,7 @@
         success: (respuesta) => {
           $('#campos').empty();
           var json = JSON.parse(respuesta);
+          console.log(respuesta);
           $("#totales").html(json.cuenta);
           json.usuario.forEach((item) => {
             var tere = document.createElement("tr");
