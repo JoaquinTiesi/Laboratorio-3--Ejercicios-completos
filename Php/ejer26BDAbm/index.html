@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ejer26BDAbm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="jquery-3.6.0.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="estilo.css">
+  </head>
+  <body>
+    <div class="fondo">
+      <div class="encabezado">
+        <h1>Ejercicio 26 BDAbm</h1>
+        Orden:
+        <input type="text" id="inputOrden" disabled="disabled" name="" value="">
+        <div id="botones">
+          <input type="button" id="cargar" value="Cargar">
+          <input type="button" id="limpiar" value="Limpiar">
+          <input type="button" id="verAlta" value="Dar de Alta">
+          <input type="button" id="verPDF" value="PDF">
+        </div>
+      </div>
+      <div class="caja">
+        <table>
+          <thead>
+            <tr>
+              <th onclick="setearOrden('nombre', 'Nombre')">Nombre</th>
+              <th onclick="setearOrden('apellido', 'Apellido')">Apellido</th>
+              <th onclick="setearOrden('Fecha', 'Fecha')">Fecha</th>
+              <th onclick="setearOrden('inscripto', 'Inscripto')">Inscripto</th>
+              <th onclick="setearOrden('legajo', 'Legajo')">Legajo</th>
+              <th onclick="setearOrden('Promedio', 'Promedio')">Promedio</th>
+              <th onclick="setearOrden('id', 'ID')">ID</th>
+              <th onclick="setearOrden('estado', 'Estado')">Estado</th>
+              <th onclick="setearOrden('foto', 'Foto carnet')">Foto carnet</th>
+              <th>Modis</th>
+              <th>Bajas</th>
+            </tr>
+            <tr>
+              <th><input type="text" id="filtradonombre" name="" value=""></th>
+              <th><input type="text" id="filtradoapellido" name="" value=""></th>
+              <th><input type="text" id="filtradofecha" name="" value=""></th>
+              <th><input type="text" id="filtradoinscripto" name="" value=""></th>
+              <th><input type="text" id="filtradolegajo" name="" value=""></th>
+              <th><input type="text" id="filtradopromedio" name="" value=""></th>
+              <th><input type="text" id="filtradoid" name="" value=""></th>
+              <th><input type="text" id="filtradoestado" name="" value=""></th>
+            </tr>
+          </thead>
+          <tbody id="campos"></tbody>
+        </table>
+        <div id="modal">
+  			<div class="modalCabecera">
+  				<h3>Dar de alta</h3>
+  				<button id="cerrarAlta">Cerrar</button>
+  			</div>
+  			<form id="formulario">
+  				<ul>
+  					<li><label>Nombre:<br/>
+  						<input type="text" id="altaNombre" placeholder="Ingrese el Nombre..." autofocus="autofocus" required="required" />
+  					</label></li>
+  					<li><label>Apellido:<br/>
+  						<input type="text" id="altaApellido" placeholder="Ingrese el Apellido..." required="required" />
+  					</label></li>
+  					<li><label>Inscripto:<br/>
+  						<input type="text" id="altaInscripto" placeholder="Ingrese Estado de Inscripcion..." required="required" />
+  					</label></li>
+  					<li><label>Legajo:<br/>
+  						<input id="altaLegajo" placeholder="Ingrese el Legajo..." required="required" />
+  					</label></li>
+  					<li><label>Fecha:
+  					<input type="date" id="altaFecha" required="required" />
+          </label></li>
+          <li><label>Promedio:<br/>
+            <input id="altaPromedio" placeholder="Ingrese el Promedio..." required="required" />
+          </label></li>
+          <li><label>Foto Carnet:<br/>
+            <input type="file" id="altaFoto" placeholder="Ingrese una Foto..." required="required" />
+          </label></li>
+          <li><label>Estado:<br/>
+            <select type="text" id="selectestado" required="required">
+            </select>
+          </label></li>
+  					<li><label id="mostrarResultado">
+  					</label></li>
+  					</ul>
+  					<div id="form-btn">
+  						<input class="cursor-pointer-input" type="button" onclick="actualizarAltas()" value="Enviar" />
+  						<input class="cursor-pointer-input" type="reset" value="Reset" />
+  					</div>
+  				</form>
+  			</div>
+        <div id="modalPDF">
+  			<div class="modalCabecera">
+  				<h3>Dar de alta</h3>
+  				<button id="cerrarPDF">Cerrar</button>
+  			</div>
+        <h1>Hola mundo</h1>
+  			</div>
+      </div>
+      <div id="backdrop"></div>
+      Total de registros: <span id="totales"></span>
+      <div class="anterior">
+        <a href="../index.html">Volver a la pagina anterior.</a>
+        </div>
+    </div>
+    <script>
+    $('#cargar').click(() => {
+      setearOrden("nombre", "Nombre");
+    });
+
+    var setearOrden = (ordenAsignado, tituloOrden) => {
+      solicitarCargarAjax(ordenAsignado);
+      $("#inputOrden").val(tituloOrden);
+    }
+
+    var solicitarCargarAjax = (ordenAsignado) => {
+      var campos = document.getElementById("campos");
+      $('#campos').empty();
+      $('#totales').html("0");
+      $('#campos').html("<tr><td colspan = '9'>Cargando informacion</td></tr>");
+
+      $.ajax({
+        type: "post",
+        url: "./PHPData.php",
+        data: {
+          orden: ordenAsignado,
+          nombre: $("#filtradonombre").val(),
+          apellido: $("#filtradoapellido").val(),
+          fecha: $("#filtradofecha").val(),
+          inscripto: $("#filtradoinscripto").val(),
+          legajo: $("#filtradolegajo").val(),
+          promedio: $("#filtradoapellido").val(),
+          foto: $("#filtradofoto").val(),
+          id: $("#filtradoid").val(),
+          estado: $("#filtradoestado").val(),
+        },
+        success: (respuesta) => {
+          console.log(respuesta);
+          $('#campos').empty();
+          var json = JSON.parse(respuesta);
+          $("#totales").html(json.cuenta);
+          json.usuario.forEach((item) => {
+            var tere = document.createElement("tr");
+            for(var key in item){
+              if(key == "codfoto"){
+                var tede;
+                var newBTN;
+                tede = document.createElement("td");
+                newBTN = document.createElement("button");
+                newBTN.className = "";
+                newBTN.innerHTML = "Foto";
+                tede.appendChild(newBTN);
+                tere.appendChild(tede);
+              }else {
+                var tede = document.createElement("td");
+                tede.innerHTML = item[key];
+                tere.appendChild(tede);
+              }
+
+            }
+            tede = document.createElement("td");
+            newBTN = document.createElement("button");
+            newBTN = className = "";
+            newBTN.innerHTML = "Modificar";
+            newBTN.setAttribute("onclick", "cambiarInformacion('" + item['legajo'] + "')");
+            tede.appendChild(newBTN);
+            tere.appendChild(tede);
+
+            tede = document.createElement("td");
+            newBTN = document.createElement("button");
+            newBTN.className = "";
+            newBTN.innerHTML = "Baja";
+            newBTN.setAttribute("onclick", "borrarInformacion('" + item['legajo'] + "')");
+            tede.appendChild(newBTN);
+            tere.appendChild(tede);
+
+            campos.appendChild(tere);
+          });
+        }
+      });
+    }
+
+    var cambiarInformacion = (legajo) => {
+      $("#modal").addClass("activo");
+      $("#backdrop").addClass("activo");
+      $("main").addClass("inactivo");
+      completarComboBox();
+
+      $.ajax({
+        type: "post",
+        url: "./actualizarSQL.php",
+        data: {codigo: legajo},
+        success: (respuesta) => {
+          var objJSON = JSON.parse(respuesta);
+          nombre: $("#altaNombre").val();
+          apellido: $("#altaApellido").val();
+          inscripto: $("#altaInscripto").val();
+          legajo: $("#altaLegajo").val();
+          fecha: $("#altaFecha").val();
+          promedio: $("#altaPromedio").val();
+          foto: $("#altaFoto").val();
+          estado: $("#selectestado").val();
+        }
+      });
+    }
+
+    var borrarInformacion = (legajo) =>{
+      $('#selectestado').empty();
+      $('#campos').html("<p>Solicitando datos....</p>");
+
+      $.ajax({
+        type: "post",
+        url: "./borrarSQL.php",
+        data: {
+          codigo: legajo
+        },
+        success: (respuesta) => {
+          console.log(respuesta);
+        }
+      });
+    }
+
+    var completarComboBox = () => {
+      select = document.getElementById('selectestado');
+      $('#selectestado').empty();
+      $('#campos').html("<p>Cargando datos...</p>");
+
+      $.ajax({
+        type: "post",
+        url: "./getComboBox.php",
+        data: {},
+        success: (respuesta) => {
+          $('#selectestado').empty();
+
+          var objJSON = JSON.parse(respuesta);
+
+          objJSON.forEach((item) => {
+            var nuevaOpcion = document.createElement("option");
+            nuevaOpcion.value = item;
+            nuevaOpcion.innerHTML = item;
+            select.appendChild(nuevaOpcion);
+          });
+
+        }
+      })
+    }
+
+    var actualizarAltas = () => solicitarAltaAjax();
+
+    $("#verAlta").click(() => {
+      actualizarAltas = () => solicitarAltaAjax();
+      $("#modal").addClass("activo");
+      $("#backdrop").addClass("activo");
+      $("main").addClass("inactivo");
+      completarComboBox();
+    });
+
+    var solicitarAltaAjax = () => {
+      event.preventDefault();
+      $.ajax({
+        type: "post",
+        url: "./agregarSQL.php",
+        data: {
+          nombre: $("#altaNombre").val(),
+          apellido: $("#altaApellido").val(),
+          inscripto: $("#altaInscripto").val(),
+          legajo: $("#altaLegajo").val(),
+          fecha: $("#altaFecha").val(),
+          promedio: $("#altaPromedio").val(),
+          foto: $("#altaFoto").val(),
+          estado: $("#selectestado").val()
+        },
+        success: (respuesta) => {
+          console.log(respuesta);
+        }
+      });
+    };
+
+
+    $("#limpiar").click(()=>{
+      $("#campos").empty();
+      $("#totales").html("0");
+      $("#inputOrden").val("");
+    });
+
+
+    $("#cerrarAlta").click(() => {
+      $("#modal").removeClass("activo");
+      $("#backdrop").removeClass("activo");
+      $("main").removeClass("inactivo");
+    });
+
+    $("#verPDF").click(() => {
+      $("#modalPDF").addClass("activo");
+      $("#backdrop").addClass("activo");
+      $("main").addClass("inactivo");
+    });
+
+    $("#cerrarPDF").click(() => {
+      $("#modalPDF").removeClass("activo");
+      $("#backdrop").removeClass("activo");
+      $("main").removeClass("inactivo");
+    });
+    </script>
+  </body>
+</html>
