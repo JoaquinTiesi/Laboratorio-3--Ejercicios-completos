@@ -1,5 +1,13 @@
 <?php
-require("datosConexionBase.inc");
+define("SERVER","b9ovwmwcthrjvqamalfl-mysql.services.clever-cloud.com");
+define("USUARIO","ujvmkkxz9vqhyrky");
+define("PASS","DnGSpIXkhjULk2U1YUz8");
+define("BASE","b9ovwmwcthrjvqamalfl");
+
+$mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
+
+require('../controlSesion.php');
+
 
 $mysqliQuery="insert into listausuarios2 (apellido, Fecha, inscripto, legajo, Promedio, nombre, estado) values (?,?,?,?,?,?,?)";
 

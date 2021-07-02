@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+require('../controlSesion.php');
+ ?>
+
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -17,7 +21,7 @@
           <input type="button" id="cargar" value="Cargar">
           <input type="button" id="limpiar" value="Limpiar">
           <input type="button" id="verAlta" value="Dar de Alta">
-
+          <input type="button" id="cerrarSesion" value="Cerrar Sesion">
         </div>
       </div>
       <div class="caja">
@@ -63,7 +67,7 @@
   					<li><label>Apellido:<br/>
   						<input type="text" id="altaApellido" name="apellido" placeholder="Ingrese el Apellido..." required="required" />
   					</label></li>
-  					<li><label>Inscripto:<br/>
+  					<li><label>Inscripto (0 o 1):<br/>
   						<input type="text" id="altaInscripto" name="inscripto" placeholder="Ingrese Estado de Inscripcion..." required="required" />
   					</label></li>
   					<li><label>Legajo:<br/>
@@ -75,7 +79,7 @@
           <li><label>Promedio:<br/>
             <input id="altaPromedio" name="promedio" placeholder="Ingrese el Promedio..." required="required" />
           </label></li>
-          <li><label>Foto Carnet:<br/>
+          <li><label>Foto Carnet (Usted debe cargar SIEMPRE una foto):<br/>
             <input type="file" id="altaFoto" name="foto" placeholder="Ingrese una Foto..." required="required" />
           </label></li>
           <li><label>Estado:<br/>
@@ -338,6 +342,10 @@
         }
       });
     };
+
+    $('#cerrarSesion').click(() => {
+      location.href = "../cierreSesion.php";
+    });
 
 
     $("#limpiar").click(()=>{

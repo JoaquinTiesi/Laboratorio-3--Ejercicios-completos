@@ -1,4 +1,7 @@
 <?php
+
+require('../controlSesion.php');
+
 define("SERVER","b9ovwmwcthrjvqamalfl-mysql.services.clever-cloud.com");
 define("USUARIO","ujvmkkxz9vqhyrky");
 define("PASS","DnGSpIXkhjULk2U1YUz8");

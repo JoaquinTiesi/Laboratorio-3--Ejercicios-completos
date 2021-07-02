@@ -1,0 +1,266 @@
+html,body{
+  width:100%;
+  height:100%;
+  margin:0%;
+  overflow: hidden;
+}
+div.fondo{
+  width: 100%;
+  height: 100%;
+  background-color: lightgray;
+  align-items: center;
+  text-align: center;
+  overflow: auto;
+}
+div.encabezado{
+  width: 100%;
+  height: 7%;
+  background-color: lightgray;
+  align-items: center;
+  text-align: center;
+}
+div.caja{
+  width: 100%;
+  height: 79%;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  overflow: auto;
+}
+div.anterior{
+  background-color:lightblue;
+  margin:auto;
+  box-sizing:border-box;
+  float:right;
+  border: solid;
+  border-color: red;
+  font-size: 2vw;
+}
+img{
+  max-width:100%;
+  max-height:100%;
+  width:80%;
+  height: 80%;
+  opacity: 0.5;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #FAF0E6;
+  }
+
+  header {
+    position: relative;
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2vw;
+    color: #CD853F;
+  }
+
+  h2 {
+    font-size: 2vw;
+    color: #D3D3D3;
+    font-style: italic;
+  }
+
+  label{
+    text-align: center;
+  }
+
+  #container {
+    width: 98vw;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #FFFAF0;
+    overflow: hidden;
+  }
+
+  #botonera {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+  }
+
+  #botonera button {
+    width: 100px;
+    height: 50px;
+    margin: 15px 0;
+  }
+
+  main {
+    height: 50vh;
+    overflow: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td, th {
+    max-width: 100px;
+  }
+
+  input{
+    max-width: 100%;
+  }
+
+  thead {
+    background-color: lightblue;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  th {
+    border: 2px solid gray;
+  }
+
+  tbody {
+    background-color: #F5F5F5;
+    color: #333333;
+  }
+
+  td {
+    border: 1px solid #F5DEB3;
+    height: 50px;
+    text-align: center;
+  }
+
+  p.total {
+    font-size: 1.3em;
+    margin-bottom: 1em;
+  }
+  #modal {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    z-index: 3;
+    background-color: #cdcdcd;
+    padding: 5px;
+  }
+
+  #modal.activo, #backdrop.activo {
+    display: block !important;
+  }
+
+  #modal div.modalCabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #modal div.modalCabecera button {
+    padding: 5px;
+    border: none;
+  }
+
+  #modal div.modalCabecera button:hover {
+    background-color: red;
+    cursor: pointer;
+  }
+
+  #modalPDF {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    z-index: 3;
+    background-color: #cdcdcd;
+    padding: 5px;
+  }
+
+  #modalPDF.activo, #backdrop.activo {
+    display: block !important;
+  }
+
+  #modalPDF div.modalCabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #modalPDF div.modalCabecera button {
+    padding: 5px;
+    border: none;
+  }
+
+  #modalPDF div.modalCabecera button:hover {
+    background-color: red;
+    cursor: pointer;
+  }
+
+  #backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    opacity: 0.5;
+  }
+
+  #verModal {
+  }
+
+  form ul {
+    list-style: none;
+  }
+
+  form ul li {
+    float: left;
+    width: 50%;
+    min-width: 300px;
+    min-height: 100px;
+    background-color: lightblue;
+    border: 2px solid #A9A9A9;
+    padding: 20px;
+  }
+
+  form ul li label {
+    display: block;
+  }
+
+  form ul li label input, form ul li label select {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  #form-btn {
+    clear: both;
+    display: block;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A9A9A9;
+  }
+
+  .cursor-pointer-input {
+    cursor: pointer;
+    margin: 1%;
+  }
