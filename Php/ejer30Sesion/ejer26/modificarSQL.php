@@ -8,7 +8,7 @@ $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
 require('../controlSesion.php');
 
-$mysqliQuery = "update listausuarios2 set nombre=?, apellido=?, fecha=?, inscripto=?, legajo=?, promedio=?, foto=?, estado=? where legajo=?";
+$mysqliQuery = "update listausuarios2 set nombre=?, apellido=?, fecha=?, inscripto=?, legajo=?, promedio=?, foto=?, estado=? where id=?";
 
 $likeNombre= $_POST['nombre'];
 $likeApellido= $_POST['apellido'];
@@ -18,10 +18,10 @@ $likeLegajo= $_POST['legajo'];
 $likePromedio= $_POST['promedio'];
 $imagen = file_get_contents($_FILES['foto']['tmp_name']);
 $likeEstado= $_POST['estado'];
-$likeLegajoString= $_POST['legajo'];
+$likeIDString= $_POST['id'];
 
 if ($sentencia = $mysqli->prepare($mysqliQuery)) {
-  if($sentencia->bind_param("sssisssss", $likeNombre, $likeApellido, $likeFecha, $likeInscripto, $likeLegajo, $likePromedio, $imagen, $likeEstado, $likeLegajoString)){
+  if($sentencia->bind_param("sssisssss", $likeNombre, $likeApellido, $likeFecha, $likeInscripto, $likeLegajo, $likePromedio, $imagen, $likeEstado, $likeIDString)){
     if($sentencia->execute()){
       $objArticulo = new stdClass();
       $objArticulo->nombre = $likeNombre;

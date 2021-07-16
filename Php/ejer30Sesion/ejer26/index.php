@@ -82,11 +82,15 @@ require('../controlSesion.php');
           <li><label>Foto Carnet (Usted debe cargar SIEMPRE una foto):<br/>
             <input type="file" id="altaFoto" name="foto" placeholder="Ingrese una Foto..." required="required" />
           </label></li>
+          <li><label>Identificacion (ID):<br/>
+            <input id="altaid" name="id" disabled="disabled"/>
+          </label></li>
           <li><label>Estado:<br/>
             <select type="text" id="selectestado" name="estado" required="required">
             </select>
           </label></li>
   					<li><label id="mostrarResultado">
+              <input type="text" id="mostrando" placeholder="Esperando..." disabled="disabled" />
   					</label></li>
   					</ul>
   					<div id="form-btn">
@@ -164,7 +168,7 @@ require('../controlSesion.php');
             newBTN = document.createElement("button");
             newBTN.className = "";
             newBTN.innerHTML = "Foto";
-            newBTN.setAttribute("onclick", "solicitarCargarFoto('" + item['codlegajo'] + "')");
+            newBTN.setAttribute("onclick", "solicitarCargarFoto('" + item['codid'] + "')");
             tede.appendChild(newBTN);
             tere.appendChild(tede);
 
@@ -172,7 +176,7 @@ require('../controlSesion.php');
             newBTN = document.createElement("button");
             newBTN.className = "";
             newBTN.innerHTML = "Modificar";
-            newBTN.setAttribute("onclick", "cambiarInformacion('" + item['codlegajo'] + "')");
+            newBTN.setAttribute("onclick", "cambiarInformacion('" + item['codid'] + "')");
             tede.appendChild(newBTN);
             tere.appendChild(tede);
 
@@ -180,7 +184,7 @@ require('../controlSesion.php');
             newBTN = document.createElement("button");
             newBTN.className = "";
             newBTN.innerHTML = "Baja";
-            newBTN.setAttribute("onclick", "borrarInformacion('" + item['codlegajo'] + "')");
+            newBTN.setAttribute("onclick", "borrarInformacion('" + item['codid'] + "')");
             tede.appendChild(newBTN);
             tere.appendChild(tede);
 
@@ -190,12 +194,12 @@ require('../controlSesion.php');
       });
     }
 
-    var solicitarCargarFoto = (legajo) =>{
+    var solicitarCargarFoto = (id) =>{
 
       $.ajax({
         type: "post",
         url: "./fotoSQL.php",
-        data: {codigo: legajo},
+        data: {codigo: id},
         success: (respuesta) => {
 
           var objJSON = JSON.parse(respuesta);
@@ -209,8 +213,8 @@ require('../controlSesion.php');
       });
     }
 
-    var cambiarInformacion = (legajo) => {
-      actualizarAltas = () => cambiandoInformacion(legajo);
+    var cambiarInformacion = (id) => {
+      actualizarAltas = () => cambiandoInformacion(id);
 
       $("#modal").addClass("activo");
       $("#backdrop").addClass("activo");
@@ -220,7 +224,7 @@ require('../controlSesion.php');
       $.ajax({
         type: "post",
         url: "./actualizarSQL.php",
-        data: {codigo: legajo},
+        data: {codigo: id},
         success: (respuesta) => {
           console.log(respuesta);
           var objJSON = JSON.parse(respuesta);
@@ -232,11 +236,12 @@ require('../controlSesion.php');
           $("#altaPromedio").val(objJSON.codpromedio);
           $("#altaFoto").val(objJSON.codfoto);
           $("#selectestado").val(objJSON.codestado);
+          $("#altaid").val(objJSON.codid);
         }
       });
     }
 
-    var cambiandoInformacion = (legajo) => {
+    var cambiandoInformacion = (id) => {
       event.preventDefault();
 
       var formElement = document.getElementById("formulario");
@@ -256,6 +261,9 @@ require('../controlSesion.php');
 
           console.log(respuesta);
 
+          $('#mostrando').val("<h1>Exito!</h1>");
+
+
           $("modalPDF").addClass("activo");
           $("#backdrop").addClass("activo");
           $("#main").addClass("inactivo");
@@ -271,7 +279,7 @@ require('../controlSesion.php');
       });
     }
 
-    var borrarInformacion = (legajo) =>{
+    var borrarInformacion = (id) =>{
       $('#selectestado').empty();
       $('#campos').html("<p>Solicitando datos....</p>");
 
@@ -279,8 +287,7 @@ require('../controlSesion.php');
         type: "post",
         url: "./borrarSQL.php",
         data: {
-          codigo: legajo
-        },
+          codigo: id},
         success: (respuesta) => {
           console.log(respuesta);
         }
@@ -290,7 +297,7 @@ require('../controlSesion.php');
     var completarComboBox = () => {
       select = document.getElementById('selectestado');
       $('#selectestado').empty();
-      $('#campos').html("<p>Cargando datos...</p>");
+      //$('#campos').html("<p>Cargando datos...</p>");
 
       $.ajax({
         type: "post",
@@ -356,6 +363,15 @@ require('../controlSesion.php');
 
 
     $("#cerrarAlta").click(() => {
+      $("#altaNombre").val("");
+      $("#altaApellido").val("");
+      $("#altaInscripto").val("");
+      $("#altaLegajo").val("");
+      $("#altaFecha").val("");
+      $("#altaPromedio").val("");
+      $("#altaFoto").val("");
+      $("#selectestado").val("");
+      $("#altaid").val("");
       $("#modal").removeClass("activo");
       $("#backdrop").removeClass("activo");
       $("main").removeClass("inactivo");

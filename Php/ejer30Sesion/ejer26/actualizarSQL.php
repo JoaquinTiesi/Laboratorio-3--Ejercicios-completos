@@ -9,7 +9,7 @@ define("BASE","b9ovwmwcthrjvqamalfl");
 
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
-$mysqliQuery = "select * from listausuarios2 where legajo = ?";
+$mysqliQuery = "select * from listausuarios2 where id = ?";
 
 $postLegajo = $_POST['codigo'];
 
@@ -27,11 +27,11 @@ if($sentencia = $mysqli -> prepare($mysqliQuery)){
         $objArticulo->codinscripto=$fila['inscripto'];
         $objArticulo->codlegajo=$fila['legajo'];
         $objArticulo->codpromedio=$fila['Promedio'];
-        //$objArticulo->codfoto=$fila['foto'];
+        //$objArticulo->codfoto= base64_encode($fila['foto']);
         $objArticulo->codid=$fila['id'];
         $objArticulo->codestado=$fila['estado'];
 
-        echo json_encode($objArticulo);
+        echo json_encode($objArticulo,JSON_INVALID_UTF8_SUBSTITUTE);
       }
 
       $mysqli->close();

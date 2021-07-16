@@ -8,7 +8,7 @@ $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
 require('../controlSesion.php');
 
-$mysqliQuery = "select foto from listausuarios2 where legajo = ?";
+$mysqliQuery = "select foto from listausuarios2 where id = ?";
 
 $likeLegajo = $_POST['codigo'];
 

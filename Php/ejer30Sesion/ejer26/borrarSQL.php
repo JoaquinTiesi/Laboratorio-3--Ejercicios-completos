@@ -8,7 +8,7 @@ require('../controlSesion.php');
 
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
-$mysqliQuery = "delete from listausuarios2 where legajo = ?";
+$mysqliQuery = "delete from listausuarios2 where id = ?";
 
 $postLegajo = $_POST['codigo'];
 
