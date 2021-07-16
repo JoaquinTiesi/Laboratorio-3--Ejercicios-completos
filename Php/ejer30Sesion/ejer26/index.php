@@ -83,7 +83,7 @@ require('../controlSesion.php');
             <input type="file" id="altaFoto" name="foto" placeholder="Ingrese una Foto..." required="required" />
           </label></li>
           <li><label>Identificacion (ID):<br/>
-            <input id="altaid" name="id" disabled="disabled"/>
+            <input id="altaid" name="id" readonly/>
           </label></li>
           <li><label>Estado:<br/>
             <select type="text" id="selectestado" name="estado" required="required">
@@ -104,7 +104,6 @@ require('../controlSesion.php');
   				<h3>Foto Carnet</h3>
   				<button id="cerrarPDF">Cerrar</button>
   			</div>
-        <h1>Hola mundo</h1>
         <div id="imageContainer">
         </div>
   			</div>
@@ -208,7 +207,7 @@ require('../controlSesion.php');
           $("#backdrop").addClass("activo");
           $("main").addClass("inactivo");
           $("#imageContainer").empty();
-          $("#imageContainer").html("<iframe width='100%' height='600px' src='data:image/jpeg;base64,"+objJSON+"'></iframe>");
+          $("#imageContainer").html("<iframe width='100%' height='420px' src='data:image/jpeg;base64,"+objJSON+"'></iframe>");
         }
       });
     }
@@ -247,6 +246,7 @@ require('../controlSesion.php');
       var formElement = document.getElementById("formulario");
       var formData = new FormData(formElement);
 
+
       $.ajax({
         type:"post",
         method:"post",
@@ -257,12 +257,10 @@ require('../controlSesion.php');
         cache: false,
         data: formData,
         success: (respuesta) =>{
+          $("#mostrando").val("Cargado con exito");
           var objJSON = JSON.parse(respuesta);
 
           console.log(respuesta);
-
-          $('#mostrando').val("<h1>Exito!</h1>");
-
 
           $("modalPDF").addClass("activo");
           $("#backdrop").addClass("activo");
@@ -345,6 +343,7 @@ require('../controlSesion.php');
         cache: false,
         data: formData,
         success: (respuesta) => {
+          $("#mostrando").val("Cargado con exito");
           console.log(respuesta);
         }
       });
@@ -372,6 +371,7 @@ require('../controlSesion.php');
       $("#altaFoto").val("");
       $("#selectestado").val("");
       $("#altaid").val("");
+      setearOrden("nombre", "Nombre");
       $("#modal").removeClass("activo");
       $("#backdrop").removeClass("activo");
       $("main").removeClass("inactivo");
