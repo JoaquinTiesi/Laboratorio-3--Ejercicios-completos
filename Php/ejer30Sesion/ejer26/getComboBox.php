@@ -4,7 +4,7 @@ define("USUARIO","ujvmkkxz9vqhyrky");
 define("PASS","DnGSpIXkhjULk2U1YUz8");
 define("BASE","b9ovwmwcthrjvqamalfl");
 
-require('../controlSesion.php');
+require('../controlSesion.php'); //Verifica que la sesion este iniciada
 
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
@@ -16,7 +16,7 @@ $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
 			while ($fila = $respuesta->fetch_assoc()) {
 
-				array_push($articulos, $fila['estado']);
+				array_push($articulos, $fila['estado']); //Toma los valores posibles para el comboBox desde la base de datos
 
 			}
 

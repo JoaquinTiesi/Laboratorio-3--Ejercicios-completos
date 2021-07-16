@@ -6,7 +6,7 @@ define("BASE","b9ovwmwcthrjvqamalfl");
 
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
-require('../controlSesion.php');
+require('../controlSesion.php'); //Verifica que la sesion este iniciada
 
 //$sql = "select * from listausuarios order by ".$_POST['orden'];
 //$sql = "select * from listausuarios order by orden DESC";
@@ -61,7 +61,7 @@ if ($sentencia = $mysqli->prepare($sql)) { //devuelve obj $resultado
       $objArticulos->cuenta=$resultadoCuentaRegistros;
       $salidaJson = json_encode($objArticulos);
       $mysqli->close();
-      echo $salidaJson;
+      echo $salidaJson; //Obtiene la informacion de la base de datos y la envia a las tablas
 
       die();
     }

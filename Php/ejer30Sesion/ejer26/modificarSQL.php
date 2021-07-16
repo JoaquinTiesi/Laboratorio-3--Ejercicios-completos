@@ -6,7 +6,7 @@ define("BASE","b9ovwmwcthrjvqamalfl");
 
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
-require('../controlSesion.php');
+require('../controlSesion.php'); //Verifica que la sesion este iniciada
 
 $mysqliQuery = "update listausuarios2 set nombre=?, apellido=?, fecha=?, inscripto=?, legajo=?, promedio=?, foto=?, estado=? where id=?";
 
@@ -33,7 +33,7 @@ if ($sentencia = $mysqli->prepare($mysqliQuery)) {
       $objArticulo->imagen = $imagen;
       $objArticulo->estado = $likeEstado;
 
-      echo json_encode($objArticulo);
+      echo json_encode($objArticulo); //Actualiza la informacion de la base de datos en base al ID 
 
     }else {
       $objRTA = new stdClass();

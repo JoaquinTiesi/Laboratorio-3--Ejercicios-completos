@@ -1,6 +1,6 @@
 <?php
 
-require('../controlSesion.php');
+require('../controlSesion.php'); //Verifica que la sesion este iniciada
 
 define("SERVER","b9ovwmwcthrjvqamalfl-mysql.services.clever-cloud.com");
 define("USUARIO","ujvmkkxz9vqhyrky");
@@ -27,11 +27,11 @@ if($sentencia = $mysqli -> prepare($mysqliQuery)){
         $objArticulo->codinscripto=$fila['inscripto'];
         $objArticulo->codlegajo=$fila['legajo'];
         $objArticulo->codpromedio=$fila['Promedio'];
-        //$objArticulo->codfoto= base64_encode($fila['foto']);
+        //$objArticulo->codfoto= base64_encode($fila['foto']); //El encodeado no funciona el chrome?
         $objArticulo->codid=$fila['id'];
         $objArticulo->codestado=$fila['estado'];
 
-        echo json_encode($objArticulo,JSON_INVALID_UTF8_SUBSTITUTE);
+        echo json_encode($objArticulo,JSON_INVALID_UTF8_SUBSTITUTE); //devuelve la informacion de la tabla correspondiente en base al ID
       }
 
       $mysqli->close();

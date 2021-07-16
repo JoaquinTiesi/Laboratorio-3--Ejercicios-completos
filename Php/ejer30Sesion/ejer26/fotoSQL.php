@@ -6,7 +6,7 @@ define("BASE","b9ovwmwcthrjvqamalfl");
 
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
-require('../controlSesion.php');
+require('../controlSesion.php'); //Verifica que la sesion este iniciada
 
 $mysqliQuery = "select foto from listausuarios2 where id = ?";
 
@@ -20,7 +20,7 @@ if ($sentencia = $mysqli->prepare($mysqliQuery)) {
 
     while ($fila = $respuesta->fetch_assoc()) {
 
-      $legajo = base64_encode($fila['foto']);
+      $legajo = base64_encode($fila['foto']); //Selecciona la imagen correcta en base al ID en la base de datos y la envia para mostrar
 
     }
 

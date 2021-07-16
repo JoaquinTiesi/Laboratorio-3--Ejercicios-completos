@@ -1,17 +1,17 @@
 <?php
-if (!autenticar($_POST['usuario'], $_POST['contrasenia'])) {
+if (!autenticar($_POST['usuario'], $_POST['contrasenia'])) { //Si no se autentica el inicio, devuelve a la pantalla de inicio
   header("Location: ./inicio.html");
 }else {
-  session_start();
+  session_start(); //Inicia la sesion y asigna todos los valores para entrar
 
   $_SESSION['idSesion'] = session_id();
 
   $_SESSION['sessionLogin'] = $_POST['usuario'];
 
-  header("Location: ./ejer26/index.php");
+  header("Location: ./ejer26/index.php"); //Nos conecta con el .php que nos llevara a la pagina correcta
 }
 
-function autenticar($usuario, $contrasenia){
+function autenticar($usuario, $contrasenia){ //Funcion de autenticacion en base al usuario y contrasenia ingresado
 
   define("SERVER","b9ovwmwcthrjvqamalfl-mysql.services.clever-cloud.com");
   define("USUARIO","ujvmkkxz9vqhyrky");
@@ -20,7 +20,7 @@ function autenticar($usuario, $contrasenia){
 
   $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
-  $mysqliQuery = "select * from listainicio where usuario = ? and contrasenia = ?";
+  $mysqliQuery = "select * from listainicio where usuario = ? and contrasenia = ?"; //Busca igualdades en la lista de inicio
 
   if ($sentencia = $mysqli->prepare($mysqliQuery)) {
     if ($sentencia->bind_param("si", $usuario, $contrasenia)) {
@@ -29,7 +29,7 @@ function autenticar($usuario, $contrasenia){
 
         $totalFilas = $respuesta->num_rows;
 
-        if ($totalFilas == 1) {
+        if ($totalFilas == 1) { //Si encuentra una igualdad, da el OK
           return true;
         }else {
 					return false;

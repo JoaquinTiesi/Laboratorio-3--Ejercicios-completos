@@ -6,7 +6,7 @@ define("BASE","b9ovwmwcthrjvqamalfl");
 
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
-require('../controlSesion.php');
+require('../controlSesion.php'); //Verifica que la sesion este iniciada
 
 $mysqliQuery = "insert into listausuarios2 (nombre, apellido, fecha, inscripto, legajo, promedio, foto, estado) values (?,?,?,?,?,?,?,?)";
 
@@ -32,7 +32,7 @@ if ($sentencia = $mysqli->prepare($mysqliQuery)) {
       $objArticulo->imagen = $imagen;
       $objArticulo->estado = $likeEstado;
 
-      echo json_encode($objArticulo);
+      echo json_encode($objArticulo); //Cargamos la nueva informacion en la base de datos
 
     }else {
       $objRTA = new stdClass();

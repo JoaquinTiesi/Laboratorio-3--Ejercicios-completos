@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-require('../controlSesion.php');
+require('../controlSesion.php'); //Verifica que la sesion este iniciada
  ?>
 
 <html lang="es" dir="ltr">
@@ -56,7 +56,7 @@ require('../controlSesion.php');
         </table>
         <div id="modal">
   			<div class="modalCabecera">
-  				<h3>Dar de alta</h3>
+  				<h3>Carga de datos:</h3>
   				<button id="cerrarAlta">Cerrar</button>
   			</div>
   			<form id="formulario">
@@ -115,16 +115,82 @@ require('../controlSesion.php');
         </div>
     </div>
     <script>
-    $('#cargar').click(() => {
-      setearOrden("nombre", "Nombre");
+    $('#cargar').click(() => { //Primera carga de las tablas con la informacio
+      setearOrden("nombre", "Nombre"); //Llama a setearOrden, para armar la tabla en base al orden elegido
     });
 
-    var setearOrden = (ordenAsignado, tituloOrden) => {
-      solicitarCargarAjax(ordenAsignado);
-      $("#inputOrden").val(tituloOrden);
+    $("#limpiar").click(()=>{ //Limpia la tabla
+      $("#campos").empty();
+      $("#totales").html("0");
+      $("#inputOrden").val("");
+    });
+
+    $("#cerrarAlta").click(() => { //Cierra el formulario de altas y lo limpia
+      $("#altaNombre").val("");
+      $("#altaApellido").val("");
+      $("#altaInscripto").val("");
+      $("#altaLegajo").val("");
+      $("#altaFecha").val("");
+      $("#altaPromedio").val("");
+      $("#altaFoto").val("");
+      $("#selectestado").val("");
+      $("#altaid").val("");
+      setearOrden("nombre", "Nombre"); //Vuelve a cargarla tabla actualizada
+      $("#modal").removeClass("activo");
+      $("#backdrop").removeClass("activo");
+      $("main").removeClass("inactivo");
+    });
+
+    $("#verPDF").click(() => { //Muestra el div contenedor de las imagenes
+      $("#modalPDF").addClass("activo");
+      $("#backdrop").addClass("activo");
+      $("main").addClass("inactivo");
+    });
+
+    $("#cerrarPDF").click(() => { //Cierra el div contenedor de las imagenes
+      $("#modalPDF").removeClass("activo");
+      $("#backdrop").removeClass("activo");
+      $("main").removeClass("inactivo");
+    });
+
+    var actualizarAltas = () => solicitarAltaAjax();
+
+    $("#verAlta").click(() => { //Muestra el formulario de Altas
+      actualizarAltas = () => solicitarAltaAjax(); //Conecta con la solicitud de alta
+      $("#modal").addClass("activo");
+      $("#backdrop").addClass("activo");
+      $("main").addClass("inactivo");
+      completarComboBox();
+    });
+
+    var solicitarAltaAjax = () => { //Carga nueva informacion en la Base de Datos
+      event.preventDefault();
+
+      var formElement = document.getElementById("formulario");
+      var formData = new FormData(formElement);
+
+      $.ajax({
+        type: "post",
+        method: "post",
+        enctype: "multipart/form-data",
+        url: "./insertarSQL.php", //cambiar por insert...
+        processData: false,
+        contentType: false,
+        cache: false,
+        data: formData,
+        success: (respuesta) => {
+          $("#mostrando").val("Cargado con exito"); //Si funciona la carga, lo reporta
+          console.log(respuesta);
+        }
+      });
+    };
+
+    var setearOrden = (ordenAsignado, tituloOrden) => { //Va a cargar la tabla en base a los parametros de orden traidos
+      solicitarCargarAjax(ordenAsignado); //Carga la tabla
+      $("#inputOrden").val(tituloOrden); //Muestra el orden establecido
     }
 
-    var solicitarCargarAjax = (ordenAsignado) => {
+    var solicitarCargarAjax = (ordenAsignado) => { //Carga las tablas con el orden dado
       var campos = document.getElementById("campos");
       $('#campos').empty();
       $('#totales').html("0");
@@ -145,7 +211,7 @@ require('../controlSesion.php');
           id: $("#filtradoid").val(),
           estado: $("#filtradoestado").val()
         },
-        success: (respuesta) => {
+        success: (respuesta) => { //Al exito de ordenar la informacion, crea la tabla ordenada
           console.log(respuesta);
           $('#campos').empty();
           var json = JSON.parse(respuesta);
@@ -167,7 +233,7 @@ require('../controlSesion.php');
             newBTN = document.createElement("button");
             newBTN.className = "";
             newBTN.innerHTML = "Foto";
-            newBTN.setAttribute("onclick", "solicitarCargarFoto('" + item['codid'] + "')");
+            newBTN.setAttribute("onclick", "solicitarCargarFoto('" + item['codid'] + "')"); //Boton para mostrar la foto
             tede.appendChild(newBTN);
             tere.appendChild(tede);
 
@@ -175,7 +241,7 @@ require('../controlSesion.php');
             newBTN = document.createElement("button");
             newBTN.className = "";
             newBTN.innerHTML = "Modificar";
-            newBTN.setAttribute("onclick", "cambiarInformacion('" + item['codid'] + "')");
+            newBTN.setAttribute("onclick", "cambiarInformacion('" + item['codid'] + "')"); //Boton para cambiar la informacion
             tede.appendChild(newBTN);
             tere.appendChild(tede);
 
@@ -183,7 +249,7 @@ require('../controlSesion.php');
             newBTN = document.createElement("button");
             newBTN.className = "";
             newBTN.innerHTML = "Baja";
-            newBTN.setAttribute("onclick", "borrarInformacion('" + item['codid'] + "')");
+            newBTN.setAttribute("onclick", "borrarInformacion('" + item['codid'] + "')"); //Boton para dar de baja al usuario
             tede.appendChild(newBTN);
             tere.appendChild(tede);
 
@@ -193,7 +259,7 @@ require('../controlSesion.php');
       });
     }
 
-    var solicitarCargarFoto = (id) =>{
+    var solicitarCargarFoto = (id) =>{  //Muestra la foto en base al ID correspondiente
 
       $.ajax({
         type: "post",
@@ -207,24 +273,24 @@ require('../controlSesion.php');
           $("#backdrop").addClass("activo");
           $("main").addClass("inactivo");
           $("#imageContainer").empty();
-          $("#imageContainer").html("<iframe width='100%' height='420px' src='data:image/jpeg;base64,"+objJSON+"'></iframe>");
+          $("#imageContainer").html("<iframe width='100%' height='420px' src='data:image/jpeg;base64,"+objJSON+"'></iframe>"); //Muestra la imagen pedida a la base de datos
         }
       });
     }
 
-    var cambiarInformacion = (id) => {
-      actualizarAltas = () => cambiandoInformacion(id);
+    var cambiarInformacion = (id) => { //Actualizamos la informacion de una tabla en particular
+      actualizarAltas = () => cambiandoInformacion(id); //Toma el control del formulario de altas para actualizar
 
       $("#modal").addClass("activo");
       $("#backdrop").addClass("activo");
       $("main").addClass("inactivo");
-      completarComboBox();
+      completarComboBox(); //Rellena el comboBox con las opciones posibles
 
       $.ajax({
         type: "post",
         url: "./actualizarSQL.php",
         data: {codigo: id},
-        success: (respuesta) => {
+        success: (respuesta) => { //Rellena las opciones con los valores actuales de la tabla en el formulario
           console.log(respuesta);
           var objJSON = JSON.parse(respuesta);
           $("#altaNombre").val(objJSON.codnombre);
@@ -240,7 +306,7 @@ require('../controlSesion.php');
       });
     }
 
-    var cambiandoInformacion = (id) => {
+    var cambiandoInformacion = (id) => { //Cambia la informacion de la tabla por la nueva dada
       event.preventDefault();
 
       var formElement = document.getElementById("formulario");
@@ -257,42 +323,14 @@ require('../controlSesion.php');
         cache: false,
         data: formData,
         success: (respuesta) =>{
-          $("#mostrando").val("Cargado con exito");
-          var objJSON = JSON.parse(respuesta);
-
+          $("#mostrando").val("Cargado con exito"); //Se informa si la informacion fue actualizada
           console.log(respuesta);
 
-          $("modalPDF").addClass("activo");
-          $("#backdrop").addClass("activo");
-          $("#main").addClass("inactivo");
-          newP = document.createElement("p");
-          if (objJSON.stringDeError) {
-            newP.innerHTML = `Error:<br/><br/>${objJSON.stringDeError}`;
-          } else {
-            newP.innerHTML = `Fila Modificada:<br/><br/>Nombre: ${objJSON.nombre}<br>Apellido: ${objJSON.apellido}<br>Fecha: ${objJSON.fecha}<br>Inscripto: ${objJSON.inscripto}<br>Legajo: ${objJSON.legajo}<br>Promedio: ${objJSON.promedio}<br>Imagen: ${objJSON.imagen}<br>ID: ${objJSON.id}<br>Estado: ${objJSON.estado}`;
-          }
-          $("#imageContainer").empty();
-          $("#imageContainer").append(newP);
         }
       });
     }
 
-    var borrarInformacion = (id) =>{
-      $('#selectestado').empty();
-      $('#campos').html("<p>Solicitando datos....</p>");
-
-      $.ajax({
-        type: "post",
-        url: "./borrarSQL.php",
-        data: {
-          codigo: id},
-        success: (respuesta) => {
-          console.log(respuesta);
-        }
-      });
-    }
-
-    var completarComboBox = () => {
+    var completarComboBox = () => { //Completa el comboBox con las opciones posibles
       select = document.getElementById('selectestado');
       $('#selectestado').empty();
       //$('#campos').html("<p>Cargando datos...</p>");
@@ -317,77 +355,25 @@ require('../controlSesion.php');
       })
     }
 
-    var actualizarAltas = () => solicitarAltaAjax();
-
-    $("#verAlta").click(() => {
-      actualizarAltas = () => solicitarAltaAjax();
-      $("#modal").addClass("activo");
-      $("#backdrop").addClass("activo");
-      $("main").addClass("inactivo");
-      completarComboBox();
-    });
-
-    var solicitarAltaAjax = () => {
-      event.preventDefault();
-
-      var formElement = document.getElementById("formulario");
-      var formData = new FormData(formElement);
+    var borrarInformacion = (id) =>{ //Borramos una tabla en particular en base al ID
+      $('#selectestado').empty();
 
       $.ajax({
         type: "post",
-        method: "post",
-        enctype: "multipart/form-data",
-        url: "./insertarSQL.php", //cambiar por insert
-        processData: false,
-        contentType: false,
-        cache: false,
-        data: formData,
+        url: "./borrarSQL.php",
+        data: {
+          codigo: id},
         success: (respuesta) => {
-          $("#mostrando").val("Cargado con exito");
+          setearOrden("nombre", "Nombre"); //Vuelve a cargarla tabla actualizada
           console.log(respuesta);
         }
       });
-    };
+    }
 
-    $('#cerrarSesion').click(() => {
+    $('#cerrarSesion').click(() => { //Cierra sesion y devuelve al LOGIN
       location.href = "../cierreSesion.php";
     });
 
-
-    $("#limpiar").click(()=>{
-      $("#campos").empty();
-      $("#totales").html("0");
-      $("#inputOrden").val("");
-    });
-
-
-    $("#cerrarAlta").click(() => {
-      $("#altaNombre").val("");
-      $("#altaApellido").val("");
-      $("#altaInscripto").val("");
-      $("#altaLegajo").val("");
-      $("#altaFecha").val("");
-      $("#altaPromedio").val("");
-      $("#altaFoto").val("");
-      $("#selectestado").val("");
-      $("#altaid").val("");
-      setearOrden("nombre", "Nombre");
-      $("#modal").removeClass("activo");
-      $("#backdrop").removeClass("activo");
-      $("main").removeClass("inactivo");
-    });
-
-    $("#verPDF").click(() => {
-      $("#modalPDF").addClass("activo");
-      $("#backdrop").addClass("activo");
-      $("main").addClass("inactivo");
-    });
-
-    $("#cerrarPDF").click(() => {
-      $("#modalPDF").removeClass("activo");
-      $("#backdrop").removeClass("activo");
-      $("main").removeClass("inactivo");
-    });
     </script>
   </body>
 </html>

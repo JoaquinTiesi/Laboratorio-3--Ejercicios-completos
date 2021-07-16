@@ -6,7 +6,9 @@ define("BASE","b9ovwmwcthrjvqamalfl");
 
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
-require('../controlSesion.php');
+require('../controlSesion.php'); //Verifica que la sesion este iniciada
+
+// .php depreciado. Eliminar?...
 
 
 $mysqliQuery="insert into listausuarios2 (apellido, Fecha, inscripto, legajo, Promedio, nombre, estado) values (?,?,?,?,?,?,?)";
